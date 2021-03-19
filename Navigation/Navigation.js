@@ -1,21 +1,21 @@
-import { Header } from 'react-native/Libraries/NewAppScreen';
+
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack'
-import Connexion from '../Components/Connexion'
-import Inscription from '../Components/Inscription'
+import ConnexionScreen from '../Screen/ConnexionScreen'
+import InscriptionScreen from '../Screen/InscriptionScreen'
 
 
 
 const SearchStackNavigator = createStackNavigator({
     Connexion: { 
-        screen: Connexion,
+        screen: ConnexionScreen,
         navigationOptions: {
         header: null
 
     }
     },
     Inscription: {
-        screen: Inscription,
+        screen: InscriptionScreen,
         navigationOptions: {
             header: null
         }

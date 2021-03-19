@@ -1,8 +1,8 @@
 import React from 'react'
 import { View, TextInput, Button , Text, StyleSheet, TouchableOpacity, ScrollView} from 'react-native'
-import HeaderInscription from './HeaderInscription'
+import HeaderInscription from '../Components/HeaderInscription'
 
-class Inscription extends React.Component {
+class InscriptionScreen extends React.Component {
 
     render() {
         return (
@@ -146,4 +146,4 @@ const styles = StyleSheet.create({
 })
 
 
-export default Inscription
+export default InscriptionScreen
