@@ -6,7 +6,7 @@ import InscriptionScreen from '../Screen/InscriptionScreen'
 
 
 
-const SearchStackNavigator = createStackNavigator({
+const ConnexionStackNavigator = createStackNavigator({
     Connexion: { 
         screen: ConnexionScreen,
         navigationOptions: {
@@ -24,4 +24,4 @@ const SearchStackNavigator = createStackNavigator({
 
 
 
-export default createAppContainer(SearchStackNavigator)
+export default createAppContainer(ConnexionStackNavigator)

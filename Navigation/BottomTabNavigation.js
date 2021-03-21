@@ -5,6 +5,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import HomeScreen from '../Screen/HomeScreen';
 import ActualCommandScreen from '../Screen/CommandesScreen/ActualCommandScreen';
 import ProfilScreen from '../Screen/ProfilScreen';
+import ConnexionStackNavigator from './ConnexionStackNavigator';
 
 
 const Tab = createBottomTabNavigator();
@@ -18,7 +19,7 @@ function BottomTabNavigator() {
               activeTintColor: '#ECFFFA',
               inactiveTintColor: '#5B5B5B',
               style: {backgroundColor: '#57B8FF', height:55},
-              labelStyle: {fontSize: 14, fontFamily:'Quicksand-Bold'},
+              labelStyle: {fontSize: 14, fontFamily:'Quicksand-SemiBold'},
               
           }}
       > 
@@ -32,7 +33,7 @@ function BottomTabNavigator() {
             ), }} 
         />
 
-        <Tab.Screen name="Commandes" component={ActualCommandScreen} options={{
+        <Tab.Screen name="Commandes" component={ConnexionStackNavigator} options={{
             tabBarLabel: 'Commandes',
             tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons 
