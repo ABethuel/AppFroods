@@ -1,7 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import * as Font from 'expo-font'
-import Navigation from './Navigation/Navigation'
+import HomeScreen from './Screen/HomeScreen'
+import BottomTabNavigator from './Navigation/BottomTabNavigation';
 
 export default class App extends React.Component {
 
@@ -17,7 +18,7 @@ export default class App extends React.Component {
   
   render() {
     return (
-      <Navigation/>
+      <BottomTabNavigator/>
     )
   }
 }
