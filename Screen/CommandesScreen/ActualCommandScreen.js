@@ -16,13 +16,13 @@ class ActualCommandScreen extends React.Component {
           <TouchableOpacity style={styles.button1}>
             <Text style={styles.text}>Commande en cours</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button2}>
+          <TouchableOpacity style={styles.button2} onPress={() => this.props.navigation.navigate("AllCommands")}>
             <Text style={styles.text}>Commandes passées</Text>
           </TouchableOpacity>
         </View>
 
         <View style={styles.container}>
-          <Text style={{fontFamily:'Quicksand-Bold', fontSize:20}}>Anciennes Commandes</Text>
+          <Text style={{fontFamily:'Quicksand-Bold', fontSize:20}}>Pas de commandes en cours !</Text>
         </View>
       </View>
     )

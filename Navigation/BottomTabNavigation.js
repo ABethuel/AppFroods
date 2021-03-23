@@ -2,10 +2,11 @@ import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+
 import HomeScreen from '../Screen/HomeScreen';
 import ActualCommandScreen from '../Screen/CommandesScreen/ActualCommandScreen';
 import ProfilScreen from '../Screen/ProfilScreen';
-import ConnexionStackNavigator from './ConnexionStackNavigator';
+import CommandsStackNavigator from './CommandsStackNavigator';
 
 
 const Tab = createBottomTabNavigator();
@@ -33,7 +34,7 @@ function BottomTabNavigator() {
             ), }} 
         />
 
-        <Tab.Screen name="Commandes" component={ConnexionStackNavigator} options={{
+        <Tab.Screen name="Commandes" component={CommandsStackNavigator} options={{
             tabBarLabel: 'Commandes',
             tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons 

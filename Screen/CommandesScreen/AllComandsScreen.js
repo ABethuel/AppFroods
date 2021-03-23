@@ -2,7 +2,10 @@
 
 import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import { FlatList } from 'react-native-gesture-handler'
 import HeaderInscription from '../../Components/HeaderInscription'
+import OldCommands from '../../Data/OldCommands.json'
+import DisplayAllCommands from '../../Components/DisplayAllCommands'
 
 class AllComandsScreen extends React.Component {
 
@@ -13,7 +16,7 @@ class AllComandsScreen extends React.Component {
         <HeaderInscription/>
 
         <View style={styles.choice_tab}>
-          <TouchableOpacity style={styles.button2}>
+          <TouchableOpacity style={styles.button2} onPress={() => this.props.navigation.navigate("ActualCommand")}>
             <Text style={styles.text}>Commande en cours</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button1}>
@@ -22,7 +25,11 @@ class AllComandsScreen extends React.Component {
         </View>
 
         <View style={styles.container}>
-          <Text style={{fontFamily:'Quicksand-Bold', fontSize:20}}>Pas de commandes en cours !</Text>
+          <FlatList
+            data={OldCommands}
+            keyExtractor={(item) => item.id.toString()}
+            renderItem={({item}) => <DisplayAllCommands command={item}/>}
+          />
         </View>
       </View>
     )
@@ -70,6 +77,8 @@ const styles = StyleSheet.create({
     alignItems:'center',
     justifyContent:'center',
     flex : 2,
+    marginTop: 50,
+    marginBottom:10,
   }
 })
 
