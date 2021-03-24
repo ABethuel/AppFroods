@@ -4,7 +4,7 @@ import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import { FlatList } from 'react-native-gesture-handler'
 import HeaderInscription from '../../Components/HeaderInscription'
-import OldCommands from '../../Data/OldCommands.json'
+import OldCommands from '../../Data/OldCommands'
 import DisplayAllCommands from '../../Components/DisplayAllCommands'
 
 class AllComandsScreen extends React.Component {
@@ -28,7 +28,7 @@ class AllComandsScreen extends React.Component {
           <FlatList
             data={OldCommands}
             keyExtractor={(item) => item.id.toString()}
-            renderItem={({item}) => <DisplayAllCommands command={item}/>}
+            renderItem={({item}) => <DisplayAllCommands command={item} displayOldCommand={this._displayProfil}/>}
           />
         </View>
       </View>
@@ -74,8 +74,6 @@ const styles = StyleSheet.create({
 },
 
   container: {
-    alignItems:'center',
-    justifyContent:'center',
     flex : 2,
     marginTop: 50,
     marginBottom:10,

@@ -57,7 +57,7 @@ class InscriptionScreen extends React.Component {
                 </View>
 
                 <View style={styles.btn_inscription} >
-                    <Button color='#57B8FF' title="S'inscrire" onPress={() => {}}/>  
+                    <Button color='#57B8FF' title="S'inscrire" onPress={() => this.props.navigation.navigate('Home')}/>  
                 </View> 
 
             </ScrollView>

@@ -7,6 +7,8 @@ import HomeScreen from '../Screen/HomeScreen';
 import ActualCommandScreen from '../Screen/CommandesScreen/ActualCommandScreen';
 import ProfilScreen from '../Screen/ProfilScreen';
 import CommandsStackNavigator from './CommandsStackNavigator';
+import MyDishesNavigator from './MyDishesNavigator';
+
 
 
 const Tab = createBottomTabNavigator();
@@ -44,6 +46,15 @@ function BottomTabNavigator() {
             ), }}
         />
 
+        <Tab.Screen name="MyDishes" component={MyDishesNavigator} options={{
+            tabBarLabel: "Mes Plats",
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons 
+              name="food-variant" color={color} 
+              size={size} />
+            ), }}
+        /> 
+
         <Tab.Screen name="ProfilScreen" component={ProfilScreen} options={{
             tabBarLabel: "Profil",
             tabBarIcon: ({ color, size }) => (
@@ -51,7 +62,8 @@ function BottomTabNavigator() {
               name="account" color={color} 
               size={size} />
             ), }}
-        />       
+        /> 
+
       </Tab.Navigator>
     </NavigationContainer>
   );

@@ -13,7 +13,7 @@ export default function CommandsStackNavigator() {
         screenOptions={{
             headerShown: false
         }}
-    >
+        >
       <Stack.Screen name="ActualCommand" component={ActualCommandScreen} />
       <Stack.Screen name="AllCommands" component={AllComandsScreen} />
     </Stack.Navigator>

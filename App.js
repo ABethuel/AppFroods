@@ -1,16 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { useFonts } from 'expo-font'
-import HomeScreen from './Screen/HomeScreen'
 import BottomTabNavigator from './Navigation/BottomTabNavigation';
 import AppLoading from 'expo-app-loading';
-import { View } from 'react-native';
+import Navigation from './Navigation/ConnexionStackNavigator';
+
+
 
 export default function App() {
   let [fonts] = useFonts({
     // On mettra ici toutes nos polices d'écriture
     'Quicksand-Bold': require('./assets/fonts/Quicksand-Bold.ttf'),
-    'Quicksand-SemiBold': require('./assets/fonts/Quicksand-SemiBold.ttf')
+    'Quicksand-SemiBold': require('./assets/fonts/Quicksand-SemiBold.ttf'),
+    'Quicksand-Regular': require('./assets/fonts/Quicksand-Regular.ttf')
   })
 
   if (fonts === false) {
@@ -19,7 +21,7 @@ export default function App() {
     )
   } else{
       return(
-        <BottomTabNavigator/>
+        <Navigation/>
       )
   }
 }
