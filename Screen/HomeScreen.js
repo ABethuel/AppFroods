@@ -35,12 +35,12 @@ class HomeScreen extends React.Component {
                 <View style={styles.main_container}>
                     <HeaderInscription/>
 
-                    <TouchableOpacity style={styles.rechercher}>
+                    <TouchableOpacity style={styles.rechercher} onPress={() => this.props.navigation.navigate("Choice")}>
                         <Image style={styles.image} source={require('../images/Home/rechercher.png')}/>
                         <Text style={styles.text}>Rechercher un plat</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.proposer}>
+                    <TouchableOpacity style={styles.proposer} onPress={() => this.props.navigation.navigate("Propose")}>
                         <Image style={styles.image} source={require('../images/Home/proposer.png')}/>
                         <Text style={styles.text}>Proposer un plat</Text>
                     </TouchableOpacity>

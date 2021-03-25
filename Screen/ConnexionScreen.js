@@ -48,7 +48,7 @@ class ConnexionScreen extends React.Component {
                     </View>
     
                     <View style={styles.btn_connexion} >
-                        <Button color='#57B8FF' title="Se connecter" onPress={() => {}}/>  
+                        <Button color='#57B8FF' title="Se connecter" onPress={() => this.props.navigation.navigate('Home')}/>  
                     </View> 
     
                     <View style={styles.inscription}>

@@ -1,17 +1,41 @@
 // Components/Favorites.js
 
 import React from 'react'
-import { StyleSheet, Text } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
+import { ScrollView, TextInput } from 'react-native-gesture-handler'
+import HeaderInscription from '../../Components/HeaderInscription'
 
-class ProposeDishScreen extends React.Component {
+class ChoiceDishScreen extends React.Component {
 
   render() {
     return (
-      <Text>Proposer un plat!</Text>
+      <View style={styles.main_container}>
+        <HeaderInscription/>
+          
+          
+
+          <View style={styles.container}>
+            <Text style={{fontFamily:'Quicksand-Bold', fontSize:20}}>Proposer un plat</Text>
+          </View>
+      </View>
+      
     )
   }
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  main_container:{
+    flex:1,
+    backgroundColor:'#ECFFFA'
+  },
 
-export default ProposeDishScreen
+  container:{
+    flex: 10,
+    justifyContent:'center',
+    alignItems:'center'
+  },
+
+  
+})
+
+export default ChoiceDishScreen

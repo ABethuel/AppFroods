@@ -8,6 +8,7 @@ import ActualCommandScreen from '../Screen/CommandesScreen/ActualCommandScreen';
 import ProfilScreen from '../Screen/ProfilScreen';
 import CommandsStackNavigator from './CommandsStackNavigator';
 import MyDishesNavigator from './MyDishesNavigator';
+import HomeStackNavigator from './HomeStackNavigation';
 
 
 
@@ -26,7 +27,7 @@ function BottomTabNavigator() {
               
           }}
       > 
-        <Tab.Screen name="HomeScreen" component={HomeScreen} options={{
+        <Tab.Screen name="HomeScreen" component={HomeStackNavigator} options={{
             tabBarLabel: 'Accueil',
             tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons 
