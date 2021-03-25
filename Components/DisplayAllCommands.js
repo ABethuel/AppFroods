@@ -13,7 +13,7 @@ class DisplayAllCommands extends React.Component {
        >
         <Image
             style={styles.images}
-            source={image}
+            source={{uri: image}}
         />
         <View style={styles.container}>
           <View style={styles.top_container}>

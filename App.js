@@ -3,7 +3,7 @@ import React from 'react';
 import { useFonts } from 'expo-font'
 import BottomTabNavigator from './Navigation/BottomTabNavigation';
 import AppLoading from 'expo-app-loading';
-import Navigation from './Navigation/ConnexionStackNavigator';
+import FirstNavigation from './Navigation/ConnexionStackNavigator';
 
 
 
@@ -21,7 +21,7 @@ export default function App() {
     )
   } else{
       return(
-        <Navigation/>
+        <FirstNavigation/>
       )
   }
 }
@@ -43,3 +43,5 @@ export default function App() {
     )
   }*/
 
+
+  // Dans data mettre les fonction ""serveurs"" qui retournent true

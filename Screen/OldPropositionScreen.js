@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import { FlatList } from 'react-native-gesture-handler'
 import HeaderInscription from '../Components/HeaderInscription'
-
+import oldproposition from '../Data/OldPropositions.json'
 
 class OldPropositionScreen extends React.Component {
 
@@ -22,8 +22,12 @@ class OldPropositionScreen extends React.Component {
           </View>
   
           <View style={styles.container}>
-            <Text>Mes anciens plats</Text>
-          </View>
+            <FlatList
+              data={oldproposition}
+              keyExtractor={(item) => item.id.toString()}
+              renderItem={({item}) => <DisplayAllCommands command={item} displayOldCommand={this._displayProfil}/>}
+            />
+        </View>
         </View>
       )
     }

@@ -6,6 +6,7 @@ import { FlatList } from 'react-native-gesture-handler'
 import HeaderInscription from '../../Components/HeaderInscription'
 import OldCommands from '../../Data/OldCommands'
 import DisplayAllCommands from '../../Components/DisplayAllCommands'
+import {getOldCommands} from '../../Data/commandsData'
 
 class AllComandsScreen extends React.Component {
 
@@ -26,7 +27,7 @@ class AllComandsScreen extends React.Component {
 
         <View style={styles.container}>
           <FlatList
-            data={OldCommands}
+            data={getOldCommands()}
             keyExtractor={(item) => item.id.toString()}
             renderItem={({item}) => <DisplayAllCommands command={item} displayOldCommand={this._displayProfil}/>}
           />
