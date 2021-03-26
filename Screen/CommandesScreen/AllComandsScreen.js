@@ -29,7 +29,7 @@ class AllComandsScreen extends React.Component {
           <FlatList
             data={getOldCommands()}
             keyExtractor={(item) => item.id.toString()}
-            renderItem={({item}) => <DisplayAllCommands command={item} displayOldCommand={this._displayProfil}/>}
+            renderItem={({item}) => <DisplayAllCommands command={item}/>}
           />
         </View>
       </View>

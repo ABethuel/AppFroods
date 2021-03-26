@@ -10,4 +10,3 @@ export function getOldProposition(){
     return oldproposition
 }
 
-export default {getOldCommands, getOldProposition}

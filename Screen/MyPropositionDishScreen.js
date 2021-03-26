@@ -13,10 +13,10 @@ class MyPropositionDishScreen extends React.Component {
           <HeaderInscription/>
   
           <View style={styles.choice_tab}>
-            <TouchableOpacity style={styles.button1} onPress={() => this.props.navigation.navigate("OldPropositions")}>
+            <TouchableOpacity style={styles.button1}>
               <Text style={styles.text}>Proposition en attente</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.button2}>
+            <TouchableOpacity style={styles.button2} onPress={() => this.props.navigation.navigate("OldPropositions")}>
               <Text style={styles.text}>Anciennes propositions</Text>
             </TouchableOpacity>
           </View>
