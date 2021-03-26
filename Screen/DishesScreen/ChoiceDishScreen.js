@@ -1,7 +1,7 @@
 // Components/Favorites.js
 
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Image } from 'react-native'
 import { ScrollView, TextInput } from 'react-native-gesture-handler'
 import HeaderInscription from '../../Components/HeaderInscription'
 
@@ -14,8 +14,15 @@ class ChoiceDishScreen extends React.Component {
           <TextInput style={styles.text_input} placeholder='Rechercher un plat'/>
 
           <View style={styles.container}>
-            <Text style={{fontFamily:'Quicksand-Bold', fontSize:20}}>Séléction catégorie</Text>
+            
+            <View style={styles.line}>
+              <View style={styles.sandwich}>
+                <Image style={styles.images} source={require('../../images/CategoryIcons/sandwich.png')}/>
+                <Text style={styles.text}>Sandwich</Text>
+              </View> 
+            </View>
           </View>
+
       </View>
       
     )
@@ -42,9 +49,26 @@ const styles = StyleSheet.create({
     borderRadius : 20,
     textAlign : 'center',
     fontFamily:'Quicksand-Bold'
-  }
+  },
 
+  line :{
+    flexDirection:'row'
+  } ,
   
+  sandwich:{
+    flex:1
+  },
+
+  images: {
+    width: 150,
+    height: 150,
+    backgroundColor:'gray'
+   
+  },
+
+  text: {
+
+  }
   
 })
 
