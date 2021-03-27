@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from '../Screen/HomeScreen';
 import ProposeDishScreen from '../Screen/DishesScreen/ProposeDishScreen';
 import ChoiceDishScreen from '../Screen/DishesScreen/ChoiceDishScreen';
+import CategoryStackNavigator from './CategoryStackNavigation';
 
 
 
@@ -17,7 +18,7 @@ export default function HomeStackNavigator() {
         >
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
       <Stack.Screen name="Propose" component={ProposeDishScreen} />
-      <Stack.Screen name="Choice" component={ChoiceDishScreen} />
+      <Stack.Screen name="Choice" component={CategoryStackNavigator} />
 
     </Stack.Navigator>
   );

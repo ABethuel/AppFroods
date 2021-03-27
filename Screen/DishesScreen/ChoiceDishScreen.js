@@ -1,7 +1,7 @@
 // Components/Favorites.js
 
 import React from 'react'
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import { ScrollView, TextInput } from 'react-native-gesture-handler'
 import HeaderInscription from '../../Components/HeaderInscription'
 
@@ -16,11 +16,38 @@ class ChoiceDishScreen extends React.Component {
           <View style={styles.container}>
             
             <View style={styles.line}>
-              <View style={styles.sandwich}>
+              <TouchableOpacity style={styles.cadre}>
                 <Image style={styles.images} source={require('../../images/CategoryIcons/sandwich.png')}/>
                 <Text style={styles.text}>Sandwich</Text>
-              </View> 
+              </TouchableOpacity> 
+              <TouchableOpacity style={styles.cadre}>
+                <Image style={styles.images} source={require('../../images/CategoryIcons/salad.png')}/>
+                <Text style={styles.text}>Salades</Text>
+              </TouchableOpacity> 
             </View>
+
+            <View style={styles.line}>
+              <TouchableOpacity style={styles.cadre}>
+                <Image style={styles.images} source={require('../../images/CategoryIcons/pizza.png')}/>
+                <Text style={styles.text}>Italien</Text>
+              </TouchableOpacity> 
+              <TouchableOpacity style={styles.cadre}>
+                <Image style={styles.images} source={require('../../images/CategoryIcons/asian.png')}/>
+                <Text style={styles.text}>Asiatique</Text>
+              </TouchableOpacity> 
+            </View>
+
+            <View style={styles.line}>
+              <TouchableOpacity style={styles.cadre}>
+                <Image style={styles.images} source={require('../../images/CategoryIcons/vegan.png')}/>
+                <Text style={styles.text}>Vegan</Text>
+              </TouchableOpacity> 
+              <TouchableOpacity style={styles.cadre}>
+                <Image style={styles.images} source={require('../../images/CategoryIcons/all.png')}/>
+                <Text style={styles.text}>Tous les plats</Text>
+              </TouchableOpacity> 
+            </View>
+
           </View>
 
       </View>
@@ -36,9 +63,9 @@ const styles = StyleSheet.create({
   },
 
   container:{
-    flex: 10,
-    justifyContent:'center',
-    alignItems:'center'
+    flex: 1,
+    alignItems:'center',
+    marginTop:12
   },
 
   text_input: {
@@ -54,20 +81,29 @@ const styles = StyleSheet.create({
   line :{
     flexDirection:'row'
   } ,
-  
-  sandwich:{
-    flex:1
-  },
 
   images: {
-    width: 150,
-    height: 150,
-    backgroundColor:'gray'
+    width: 100,
+    height: 100,
+    marginTop : 4,
+    margin: 18,
+    marginBottom:0
    
   },
 
-  text: {
+  cadre:{
+    backgroundColor:'#57B8FF',
+    marginLeft : 15,
+    marginRight : 15,
+    marginBottom:38,
+    borderRadius:10,
+  },
 
+  text: {
+    fontFamily:'Quicksand-Bold',
+    textAlign:'center',
+    fontSize: 18,
+    marginBottom:8
   }
   
 })
