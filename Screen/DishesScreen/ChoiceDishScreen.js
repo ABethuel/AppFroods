@@ -11,7 +11,12 @@ class ChoiceDishScreen extends React.Component {
     return (
       <View style={styles.main_container}>
         <HeaderInscription/>
-          <TextInput style={styles.text_input} placeholder='Rechercher un plat'/>
+          <View style={styles.header}>
+            <TouchableOpacity onPress={() => this.props.navigation.navigate("HomeScreen")}>
+              <Image style={styles.image} source={require('../../images/back.png')}/>
+            </TouchableOpacity>
+            <TextInput style={styles.text_input} placeholder='Rechercher un plat'/>
+          </View>
 
           <View style={styles.container}>
             
@@ -42,7 +47,7 @@ class ChoiceDishScreen extends React.Component {
                 <Image style={styles.images} source={require('../../images/CategoryIcons/vegan.png')}/>
                 <Text style={styles.text}>Vegan</Text>
               </TouchableOpacity> 
-              <TouchableOpacity style={styles.cadre}>
+              <TouchableOpacity style={styles.cadre} onPress={() => this.props.navigation.navigate("All")}>
                 <Image style={styles.images} source={require('../../images/CategoryIcons/all.png')}/>
                 <Text style={styles.text}>Tous les plats</Text>
               </TouchableOpacity> 
@@ -68,14 +73,21 @@ const styles = StyleSheet.create({
     marginTop:12
   },
 
-  text_input: {
-    height : 28,
+  header:{
     marginTop : 110,
     margin: 35,
+    flexDirection : 'row'
+  },
+
+  text_input: {
+    height : 28,
+    width : '85%',
     backgroundColor: '#C4C4C4',
     borderRadius : 20,
     textAlign : 'center',
-    fontFamily:'Quicksand-Bold'
+    fontFamily:'Quicksand-Bold',
+    marginLeft : 20,
+    justifyContent:'center'
   },
 
   line :{
@@ -89,6 +101,11 @@ const styles = StyleSheet.create({
     margin: 18,
     marginBottom:0
    
+  },
+
+  image: {
+    height:28,
+    width:28,
   },
 
   cadre:{

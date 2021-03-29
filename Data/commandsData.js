@@ -1,6 +1,7 @@
 
 import oldcommands from './OldCommands.json'
 import oldproposition from './OldPropositions.json'
+import alldishes from './AllDishes.json'
 
 export function getOldCommands() {
     return oldcommands
@@ -8,5 +9,9 @@ export function getOldCommands() {
 
 export function getOldProposition(){
     return oldproposition
+}
+
+export function getAllDishes(){
+    return alldishes
 }
 
