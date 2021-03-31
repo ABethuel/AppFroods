@@ -43,14 +43,6 @@ const styles = StyleSheet.create({
       backgroundColor : '#ECFFFA', 
     },
   
-    text: {
-      fontFamily:'Quicksand-SemiBold',
-      fontSize: 14,
-      margin:6,
-      marginTop:1,
-      marginBottom:1
-  },
-  
     container: {
       flex : 2,
       marginTop: 15,

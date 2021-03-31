@@ -16,7 +16,7 @@
       "date": "18/11/2001",
       "from": "Charles de Gaulle",
       "price": "8",
-      "category": "Vegan",
+      "category": "vegan",
       "adress": "18 rue Saint Jacques",
       "description": "Falafels concoctés avec amour",
       "image": "https://www.papillesetpupilles.fr/wp-content/uploads/2020/05/Falafels-.jpg"
@@ -42,6 +42,17 @@
       "adress": "125 rue daguerre",
       "description": "Ramens concoctés avec amour",
       "image": "https://img.cuisineaz.com/660x660/2018-12-30/i145407-ramen-au-poulet.jpeg"
-      }
+    },
+    {
+      "id": "4987",
+      "name": "Sandwich au thon",
+      "date": "2/01/2020",
+      "from": "Vercingétorix",
+      "price": "7",
+      "category": "sandwich",
+      "adress": "12 avenue René Coty",
+      "description": "Sandwich au thon concocté avec amour",
+      "image": "https://assets.afcdn.com/recipe/20160928/21224_w1024h1024c1cx2128cy1416.webp"
+    }
   
 ]

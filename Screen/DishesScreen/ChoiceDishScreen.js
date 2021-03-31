@@ -15,35 +15,36 @@ class ChoiceDishScreen extends React.Component {
             <TouchableOpacity onPress={() => this.props.navigation.navigate("HomeScreen")}>
               <Image style={styles.image} source={require('../../images/back.png')}/>
             </TouchableOpacity>
-            <TextInput style={styles.text_input} placeholder='Rechercher un plat'/>
+            <Text style={styles.text_title}>Catégories</Text>
+
           </View>
 
           <View style={styles.container}>
             
             <View style={styles.line}>
-              <TouchableOpacity style={styles.cadre}>
+              <TouchableOpacity style={styles.cadre} onPress={() => this.props.navigation.navigate("Sandwich")}>
                 <Image style={styles.images} source={require('../../images/CategoryIcons/sandwich.png')}/>
                 <Text style={styles.text}>Sandwich</Text>
               </TouchableOpacity> 
-              <TouchableOpacity style={styles.cadre}>
+              <TouchableOpacity style={styles.cadre} onPress={() => this.props.navigation.navigate("Salads")}>
                 <Image style={styles.images} source={require('../../images/CategoryIcons/salad.png')}/>
                 <Text style={styles.text}>Salades</Text>
               </TouchableOpacity> 
             </View>
 
             <View style={styles.line}>
-              <TouchableOpacity style={styles.cadre}>
+              <TouchableOpacity style={styles.cadre} onPress={() => this.props.navigation.navigate("Italian")}>
                 <Image style={styles.images} source={require('../../images/CategoryIcons/pizza.png')}/>
                 <Text style={styles.text}>Italien</Text>
               </TouchableOpacity> 
-              <TouchableOpacity style={styles.cadre}>
+              <TouchableOpacity style={styles.cadre} onPress={() => this.props.navigation.navigate("Asian")}>
                 <Image style={styles.images} source={require('../../images/CategoryIcons/asian.png')}/>
                 <Text style={styles.text}>Asiatique</Text>
               </TouchableOpacity> 
             </View>
 
             <View style={styles.line}>
-              <TouchableOpacity style={styles.cadre}>
+              <TouchableOpacity style={styles.cadre} onPress={() => this.props.navigation.navigate("Vegan")}>
                 <Image style={styles.images} source={require('../../images/CategoryIcons/vegan.png')}/>
                 <Text style={styles.text}>Vegan</Text>
               </TouchableOpacity> 
@@ -55,8 +56,7 @@ class ChoiceDishScreen extends React.Component {
 
           </View>
 
-      </View>
-      
+      </View>      
     )
   }
 }
@@ -70,24 +70,17 @@ const styles = StyleSheet.create({
   container:{
     flex: 1,
     alignItems:'center',
-    marginTop:12
+    marginTop:40
   },
 
   header:{
     marginTop : 110,
-    margin: 35,
     flexDirection : 'row'
   },
 
-  text_input: {
-    height : 28,
-    width : '85%',
-    backgroundColor: '#C4C4C4',
-    borderRadius : 20,
-    textAlign : 'center',
+  text_title: {
+    fontSize:19,
     fontFamily:'Quicksand-Bold',
-    marginLeft : 20,
-    justifyContent:'center'
   },
 
   line :{
@@ -100,12 +93,13 @@ const styles = StyleSheet.create({
     marginTop : 4,
     margin: 18,
     marginBottom:0
-   
   },
 
   image: {
-    height:28,
-    width:28,
+    height:33,
+    width:33,
+    marginLeft: 35,
+    marginRight: 20
   },
 
   cadre:{

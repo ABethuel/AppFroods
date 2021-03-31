@@ -24,7 +24,7 @@ export default function CategoryStackNavigator() {
         <Stack.Screen name='Home' component={ChoiceDishScreen}/>
         <Stack.Screen name="Sandwich" component={SandwhichScreen} />
         <Stack.Screen name="Salads" component={SaladsScreen} />
-        <Stack.Screen name="italian" component={ItalianScreen} />
+        <Stack.Screen name="Italian" component={ItalianScreen} />
         <Stack.Screen name="Asian" component={AsianScreen} />
         <Stack.Screen name="Vegan" component={VeganScreen} />
         <Stack.Screen name="All" component={AllScreen} />
