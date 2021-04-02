@@ -11,6 +11,10 @@ import DisplayItalian from '../../../Components/DisplayItalian'
 
 class ItalianScreen extends React.Component {
 
+  _displayDish = (idDish, Name, Date, From, Price, Category, Adress, Description, Image) => {
+    this.props.navigation.navigate("Detail", {idDish:idDish, Name:Name, Date: Date, From:From, Price:Price, Category:Category, Adress:Adress, Description:Description, Image:Image})
+  }
+
   render() {
     return (
       <View style={styles.main_container}>
@@ -27,7 +31,7 @@ class ItalianScreen extends React.Component {
           <FlatList
             data={getAllDishes()}
             keyExtractor={(item) => item.id.toString()}
-            renderItem={({item}) => <DisplayItalian command={item}/>}
+            renderItem={({item}) => <DisplayItalian command={item} displayDish={this._displayDish}/>}
           />
         </View>
 

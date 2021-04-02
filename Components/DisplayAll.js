@@ -9,6 +9,7 @@ class DisplayAllCommands extends React.Component {
     return (
       <TouchableOpacity 
         style={styles.main_container}
+        onPress={() => this.props.displayDish(id, name, date, from, price, category, adress, description, image)}
        >
         <Image
             style={styles.images}

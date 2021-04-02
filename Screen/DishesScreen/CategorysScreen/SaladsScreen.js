@@ -10,6 +10,10 @@ import DisplaySalads from '../../../Components/DisplaySalads'
 
 
 class SaladsScreen extends React.Component {
+  
+  _displayDish = (idDish, Name, Date, From, Price, Category, Adress, Description, Image) => {
+    this.props.navigation.navigate("Detail", {idDish:idDish, Name:Name, Date: Date, From:From, Price:Price, Category:Category, Adress:Adress, Description:Description, Image:Image})
+  }
 
   render() {
     return (
@@ -27,7 +31,7 @@ class SaladsScreen extends React.Component {
           <FlatList
             data={getAllDishes()}
             keyExtractor={(item) => item.id.toString()}
-            renderItem={({item}) => <DisplaySalads command={item}/>}
+            renderItem={({item}) => <DisplaySalads command={item} displayDish={this._displayDish}/>}
           />
         </View>
 

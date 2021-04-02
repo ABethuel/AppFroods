@@ -8,6 +8,7 @@ import AsianScreen from '../Screen/DishesScreen/CategorysScreen/AsianScreen';
 import VeganScreen from '../Screen/DishesScreen/CategorysScreen/VeganScreen';
 import AllScreen from '../Screen/DishesScreen/CategorysScreen/AllScreen';
 import ChoiceDishScreen from '../Screen/DishesScreen/ChoiceDishScreen';
+import DetailScreen from '../Screen/DishesScreen/CategorysScreen/DetailScreen';
 
 
 
@@ -28,6 +29,7 @@ export default function CategoryStackNavigator() {
         <Stack.Screen name="Asian" component={AsianScreen} />
         <Stack.Screen name="Vegan" component={VeganScreen} />
         <Stack.Screen name="All" component={AllScreen} />
+        <Stack.Screen name="Detail" component={DetailScreen} />
     </Stack.Navigator>
   );
 }
