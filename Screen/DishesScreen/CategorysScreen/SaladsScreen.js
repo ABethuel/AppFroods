@@ -11,8 +11,8 @@ import DisplaySalads from '../../../Components/DisplaySalads'
 
 class SaladsScreen extends React.Component {
   
-  _displayDish = (idDish, Name, Date, From, Price, Category, Adress, Description, Image) => {
-    this.props.navigation.navigate("Detail", {idDish:idDish, Name:Name, Date: Date, From:From, Price:Price, Category:Category, Adress:Adress, Description:Description, Image:Image})
+  _displayDish = (idDish, Name, Date, From, Price, Category, Adress, Description, IMage) => {
+    this.props.navigation.navigate("Detail", {idDish:idDish, Name:Name, Date: Date, From:From, Price:Price, Category:Category, Adress:Adress, Description:Description, IMage:IMage})
   }
 
   render() {
