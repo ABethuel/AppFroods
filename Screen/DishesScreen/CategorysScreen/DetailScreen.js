@@ -31,12 +31,12 @@ class DetailScreen extends React.Component {
                 source={{uri: IMage}}
               />
               <View style={styles.text_container}>
-                <Text style={styles.text_dish}>{Name}</Text>
-                <Text style={styles.text_dish}>{Description}</Text>
-                <Text style={styles.text_dish}>Catégorie : {Category}</Text>
-                <Text style={styles.text_dish}>Prix : {Price}P</Text>
-                <Text style={styles.text_dish}>De : {From}</Text>
-                <Text style={styles.text_dish}>Où : {Adress}</Text>
+                <Text style={styles.text_name}>{Name}</Text>
+                <Text style={styles.text_price}>{Price}P</Text>
+                <Text style={styles.text_description}>{Description}</Text>
+                <Text style={styles.text_caracteristics}>Catégorie : {Category}</Text>
+                <Text style={styles.text_caracteristics}>De : {From}</Text>
+                <Text style={styles.text_adress}>Adresse : {Adress}</Text>
               </View>
             </View>
 
@@ -65,14 +65,16 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     alignItems:'center',
     backgroundColor:'#57B8FF',
-    margin: 30,
+    margin: 20,
+    marginTop: 30,
     borderRadius: 10
   },
 
   image_dish:{
     height: 180, 
-    width:'90%',
-    margin: 10,
+    width:'95%',
+    margin: 5,
+    marginTop: 8,
     borderRadius: 10
   },
 
@@ -89,14 +91,43 @@ const styles = StyleSheet.create({
   },
 
   text_container: {
-    margin : 10
+    margin : 7
   },
 
-  text_dish:{
+  text_name:{
     fontFamily:'Quicksand-Bold', 
     fontSize:20,
-    textAlign:'center'
+    textAlign:'center', 
+    marginBottom : 3,
   },
+
+  text_price:{
+    fontSize: 16, 
+    fontFamily: 'Quicksand-SemiBold',
+    textAlign:'center',
+    marginBottom : 6
+  },
+
+  text_description:{
+    fontFamily: 'Quicksand-Medium', 
+    fontSize: 16, 
+    textAlign : 'center',
+    fontStyle:'italic', 
+    marginBottom : 6
+  }, 
+
+  text_caracteristics:{
+    fontFamily:'Quicksand-Medium',
+    textAlign:'center',
+    fontSize:15
+  }, 
+
+  text_adress:{
+    fontFamily:'Quicksand-Medium',
+    textAlign:'center',
+    fontSize:15,
+    marginBottom:5
+  }, 
 
   text_add:{
     fontFamily:'Quicksand-Bold', 
@@ -114,7 +145,7 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     alignItems:'center',
     backgroundColor:'#57B8FF',
-    margin: 30,
+    margin: 20,
     borderRadius: 10
   },
 })

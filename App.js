@@ -12,7 +12,8 @@ export default function App() {
     // On mettra ici toutes nos polices d'écriture
     'Quicksand-Bold': require('./assets/fonts/Quicksand-Bold.ttf'),
     'Quicksand-SemiBold': require('./assets/fonts/Quicksand-SemiBold.ttf'),
-    'Quicksand-Regular': require('./assets/fonts/Quicksand-Regular.ttf')
+    'Quicksand-Regular': require('./assets/fonts/Quicksand-Regular.ttf'), 
+    'Quicksand-Medium': require('./assets/fonts/Quicksand-Medium.ttf')
   })
 
   if (fonts === false) {
