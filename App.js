@@ -1,9 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { useFonts } from 'expo-font'
+import { Provider } from 'react-redux'
+
 import BottomTabNavigator from './Navigation/BottomTabNavigation';
 import AppLoading from 'expo-app-loading';
 import FirstNavigation from './Navigation/ConnexionStackNavigator';
+import Store from './Store/configureStore'
 
 
 
@@ -22,7 +25,9 @@ export default function App() {
     )
   } else{
       return(
-        <FirstNavigation/>
+        <Provider store={Store}>
+          <FirstNavigation/>
+        </Provider>
       )
   }
 }
