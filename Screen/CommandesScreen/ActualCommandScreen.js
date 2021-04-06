@@ -3,10 +3,37 @@
 import React from 'react'
 import { StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import HeaderInscription from '../../Components/HeaderInscription'
+import { connect } from 'react-redux'
+import DisplayAllCommands from '../../Components/DisplayAllCommands'
+import { FlatList } from 'react-native-gesture-handler'
+
+
 
 class ActualCommandScreen extends React.Component {
 
+  _displayNoCommand() {
+    if (this.props.commandMade.length === 0) {
+      return (
+        <View style={styles.empty_container}>
+          <Text style={{fontFamily:'Quicksand-Bold', fontSize:20}}>Pas de commandes en cours !</Text>
+        </View>
+    )}
+    else {
+      return(
+        <View style={styles.container}>
+          <FlatList
+            data={this.props.commandMade}
+            keyExtractor={(item) => item.id.toString()}
+            renderItem={({item}) => <DisplayAllCommands command={item}/>}
+          />
+        </View>
+      )
+
+    }
+  }
+
   render() {
+    console.log(this.props)
     return (
       <View style={styles.main_container}>
 
@@ -14,16 +41,15 @@ class ActualCommandScreen extends React.Component {
 
         <View style={styles.choice_tab}>
           <TouchableOpacity style={styles.button1}>
-            <Text style={styles.text}>Commande en cours</Text>
+            <Text style={styles.text}>Commandes en cours</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button2} onPress={() => this.props.navigation.navigate("AllCommands")}>
             <Text style={styles.text}>Commandes passées</Text>
           </TouchableOpacity>
         </View>
+        
+        {this._displayNoCommand()}
 
-        <View style={styles.container}>
-          <Text style={{fontFamily:'Quicksand-Bold', fontSize:20}}>Pas de commandes en cours !</Text>
-        </View>
       </View>
     )
   }
@@ -67,10 +93,23 @@ const styles = StyleSheet.create({
 },
 
   container: {
+  flex : 2,
+  marginTop: 50,
+  marginBottom:10,
+  }, 
+
+  empty_container: {
     alignItems:'center',
     justifyContent:'center',
     flex : 2,
-  }
+    fontFamily:'Quicksand-Bold'
+  },
 })
 
-export default ActualCommandScreen
+const mapStateToProps = (state) => {
+  return {
+    commandMade: state.commandMade
+  }
+}
+
+export default connect(mapStateToProps)(ActualCommandScreen)

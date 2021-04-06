@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     rechercher: {
         backgroundColor:'#57B8FF',
         height : 250,
-        marginTop:120,
+        marginTop:150,
         margin : 65,
         borderRadius: 8,
         marginBottom:10

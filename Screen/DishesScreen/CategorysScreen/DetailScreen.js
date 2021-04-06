@@ -37,7 +37,7 @@ class DetailScreen extends React.Component {
   }
 
   _displayAddRemoveBtn() {
-    if (this.props.commandMade.findIndex(item => item.idDish === this.state.dish.idDish) !== -1){
+    if (this.props.commandMade.findIndex(item => item.id === this.state.dish.id) !== -1){
       return(
         <View>
           <Text style={styles.text_add}>Annuler la commande</Text>
@@ -52,7 +52,7 @@ class DetailScreen extends React.Component {
   }
 
   _displayShowCommand() {
-    if (this.props.commandMade.findIndex(item => item.idDish === this.state.dish.idDish) !== -1){
+    if (this.props.commandMade.findIndex(item => item.id === this.state.dish.id) !== -1){
       return(
         <TouchableOpacity 
           style={styles.btn_show}
@@ -69,22 +69,22 @@ class DetailScreen extends React.Component {
   }
 
   _displayDetail() {
-    const {idDish, Name, Date, From, Price, Category, Adress, Description, IMage} = this.props.route.params
+    const {id, name, date, from, price, category, adress, description, image} = this.props.route.params
     if (this.state.dish != undefined) {
       return (
         <ScrollView>
           <View style={styles.dish_container}>
            <Image
             style={styles.image_dish}
-            source={{uri: IMage}}
+            source={{uri: image}}
           />
           <View style={styles.text_container}>
-            <Text style={styles.text_name}>{Name}</Text>
-            <Text style={styles.text_price}>{Price}P</Text>
-            <Text style={styles.text_description}>{Description}</Text>
-            <Text style={styles.text_caracteristics}>Catégorie : {Category}</Text>
-            <Text style={styles.text_caracteristics}>De : {From}</Text>
-            <Text style={styles.text_adress}>Adresse : {Adress}</Text>
+            <Text style={styles.text_name}>{name}</Text>
+            <Text style={styles.text_price}>{price}P</Text>
+            <Text style={styles.text_description}>{description}</Text>
+            <Text style={styles.text_caracteristics}>Catégorie : {category}</Text>
+            <Text style={styles.text_caracteristics}>De : {from}</Text>
+            <Text style={styles.text_adress}>Adresse : {adress}</Text>
             </View>
           </View>
   

@@ -6,7 +6,7 @@ function toggleCommand(state = initialState, action) {
     let nextState
     switch (action.type) {
         case 'TOGGLE_COMMAND':
-            const commandMadeIndex = state.commandMade.findIndex(item => item.idDish === action.value.idDish)
+            const commandMadeIndex = state.commandMade.findIndex(item => item.id === action.value.id)
             if (commandMadeIndex !== -1 ){
                 // PLat déjà commandé, on l'annule
                 nextState = {

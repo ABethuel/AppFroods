@@ -11,8 +11,8 @@ import DisplayAsian from '../../../Components/DisplayAsian'
 
 class AsianScreen extends React.Component {
 
-  _displayDish = (idDish, Name, Date, From, Price, Category, Adress, Description, IMage) => {
-    this.props.navigation.navigate("Detail", {idDish:idDish, Name:Name, Date: Date, From:From, Price:Price, Category:Category, Adress:Adress, Description:Description, IMage:IMage})
+  _displayDish = (id, name, date, from, price, category, adress, description, image) => {
+    this.props.navigation.navigate("Detail", {id: id, name: name, date: date, from: from, price: price, category: category, adress: adress, description: description, image:image})
   }
 
   render() {

@@ -8,7 +8,7 @@ class DisplayAllCommands extends React.Component {
     const {id, name, date, from, price, description, image} = this.props.command
 
     return (
-      <View 
+      <TouchableOpacity 
         style={styles.main_container}
        >
         <Image
@@ -27,7 +27,7 @@ class DisplayAllCommands extends React.Component {
             <Text style={styles.date_text}>Le {date}</Text>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
     )
   }
 }

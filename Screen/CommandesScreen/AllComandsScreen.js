@@ -18,7 +18,7 @@ class AllComandsScreen extends React.Component {
 
         <View style={styles.choice_tab}>
           <TouchableOpacity style={styles.button2} onPress={() => this.props.navigation.navigate("ActualCommand")}>
-            <Text style={styles.text}>Commande en cours</Text>
+            <Text style={styles.text}>Commandes en cours</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button1}>
             <Text style={styles.text}>Commandes passées</Text>
