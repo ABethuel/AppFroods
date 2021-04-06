@@ -5,11 +5,12 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 
 class DisplayAllCommands extends React.Component {
   render() {
-    const {id, name, date, from, price, description, image} = this.props.command
+    const {id, name, date, from, price, category, adress, description, image} = this.props.command
 
     return (
       <TouchableOpacity 
         style={styles.main_container}
+        onPress={() => this.props.displayDetail(id, name, date, from, price, category, adress, description, image)}
        >
         <Image
             style={styles.images}

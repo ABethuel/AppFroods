@@ -9,6 +9,8 @@ import VeganScreen from '../Screen/DishesScreen/CategorysScreen/VeganScreen';
 import AllScreen from '../Screen/DishesScreen/CategorysScreen/AllScreen';
 import ChoiceDishScreen from '../Screen/DishesScreen/ChoiceDishScreen';
 import DetailScreen from '../Screen/DishesScreen/CategorysScreen/DetailScreen';
+import ActualCommandScreen from '../Screen/CommandesScreen/ActualCommandScreen';
+import AllComandsScreen from '../Screen/CommandesScreen/AllComandsScreen';
 
 
 

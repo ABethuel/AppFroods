@@ -11,6 +11,10 @@ import { FlatList } from 'react-native-gesture-handler'
 
 class ActualCommandScreen extends React.Component {
 
+  _displayDetail= (id, name, date, from, price, category, adress, description, image) => {
+    this.props.navigation.navigate("DetailActual", {id: id, name: name, date: date, from: from, price: price, category: category, adress: adress, description: description, image:image})
+  }
+
   _displayNoCommand() {
     if (this.props.commandMade.length === 0) {
       return (
@@ -24,7 +28,7 @@ class ActualCommandScreen extends React.Component {
           <FlatList
             data={this.props.commandMade}
             keyExtractor={(item) => item.id.toString()}
-            renderItem={({item}) => <DisplayAllCommands command={item}/>}
+            renderItem={({item}) => <DisplayAllCommands command={item} displayDetail={this._displayDetail}/>}
           />
         </View>
       )

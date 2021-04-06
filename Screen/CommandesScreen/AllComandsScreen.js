@@ -10,6 +10,10 @@ import {getOldCommands} from '../../Data/commandsData'
 
 class AllComandsScreen extends React.Component {
 
+  _displayDetail= (id, name, date, from, price, category, adress, description, image) => {
+    this.props.navigation.navigate("DetailAll", {id: id, name: name, date: date, from: from, price: price, category: category, adress: adress, description: description, image:image})
+  }
+
   render() {
     return (
       <View style={styles.main_container}>
@@ -29,7 +33,7 @@ class AllComandsScreen extends React.Component {
           <FlatList
             data={getOldCommands()}
             keyExtractor={(item) => item.id.toString()}
-            renderItem={({item}) => <DisplayAllCommands command={item}/>}
+            renderItem={({item}) => <DisplayAllCommands command={item} displayDetail={this._displayDetail}/>}
           />
         </View>
       </View>

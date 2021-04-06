@@ -3,10 +3,10 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, ActivityIndicator } from 'react-native'
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
-import HeaderInscription from '../../../Components/HeaderInscription'
+import HeaderInscription from '../../Components/HeaderInscription'
 import { connect } from 'react-redux'
 
-class DetailScreen extends React.Component {
+class DetailCommandScreen extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -46,22 +46,11 @@ class DetailScreen extends React.Component {
     }
     else {
       return(
-        <Text style={styles.text_add}>Commander le plat</Text>
+        <Text style={styles.text_add}>Commander à nouveau</Text>
       )
     }
   }
 
-  _displayShowCommand() {
-    if (this.props.commandMade.findIndex(item => item.id === this.state.dish.id) !== -1){
-      return(
-        <TouchableOpacity 
-          style={styles.btn_show}
-          onPress={() => this.props.navigation.navigate('Commandes')}>
-          <Text style={styles.text_add}>Voir la commande</Text>
-        </TouchableOpacity>
-      )
-    }
-  }
 
   _toggleCommand() {
     const action = { type: 'TOGGLE_COMMAND', value: this.state.dish}
@@ -94,8 +83,6 @@ class DetailScreen extends React.Component {
             {this._displayAddRemoveBtn()}
           </TouchableOpacity>
 
-          {this._displayShowCommand()}
-  
         </ScrollView>
         
       )
@@ -108,10 +95,10 @@ class DetailScreen extends React.Component {
         <HeaderInscription/>
   
         <View style={styles.header}>
-          <TouchableOpacity onPress={() => this.props.navigation.navigate("Home")}>
-            <Image style={styles.image} source={require('../../../images/back.png')}/>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate("ActualCommand")}>
+            <Image style={styles.image} source={require('../../images/back.png')}/>
           </TouchableOpacity>
-          <Text style={styles.text}>Détail du plat</Text>
+          <Text style={styles.text}>Détail de la commande</Text>
         </View>
 
         <View style={styles.container}>
@@ -249,4 +236,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(DetailScreen)
+export default connect(mapStateToProps)(DetailCommandScreen)
