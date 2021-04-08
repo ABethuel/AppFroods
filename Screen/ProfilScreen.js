@@ -1,20 +1,34 @@
 // Components/Favorites.js
 
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import { ScrollView } from 'react-native-gesture-handler'
+import { Image, StyleSheet, Text, View } from 'react-native'
+import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
 import HeaderInscription from '../Components/HeaderInscription'
+import {getProfil} from '../Data/commandsData'
+
+
 
 class ProfilScreen extends React.Component {
 
   render() {
+    const profil = getProfil()
     return (
-      <View style={styles.main_container}>
+      <ScrollView style={styles.main_container}>
         <HeaderInscription/>
           <View style={styles.container}>
-            <Text style={{fontFamily:'Quicksand-Bold', fontSize:20}}>Profil</Text>
+            <Image
+              style={styles.image}
+              source={{uri: profil.image}}/>
+            <Text style={styles.text_name}>{profil.firstname} {profil.lastname}</Text>
+            <Text style={styles.text}>Adresse : {profil.adresse}</Text>
+            <Text style={styles.text}>Telephone : {profil.telephone}</Text>
+            <Text style={styles.text}>Email : {profil.email}</Text>
           </View>
-      </View>
+
+          <TouchableOpacity style={styles.btn}>
+            <Text style={styles.btn_text}>Modifier le profil</Text>
+          </TouchableOpacity>
+      </ScrollView>
       
     )
   }
@@ -28,8 +42,57 @@ const styles = StyleSheet.create({
 
   container:{
     flex: 10,
-    justifyContent:'center',
-    alignItems:'center'
+
+  }, 
+
+  image: {
+    height: 165,
+    width: 165,
+    borderRadius: 8941423486,
+    marginTop: 125,
+    alignSelf:'center',
+    marginBottom:30
+  },
+
+  text_name: {
+    fontFamily:'Quicksand-Bold', 
+    fontSize:22,
+    textAlign: 'center', 
+    flexWrap: 'wrap',
+    marginBottom: 30
+  }, 
+
+  text: {
+    fontFamily:'Quicksand-Medium', 
+    fontSize:19,
+    textAlign: 'center',
+    flexWrap: 'wrap',
+    marginBottom: 15,
+    marginLeft: 15,
+    marginRight:15,
+    marginTop: 0
+  },
+
+  btn: {
+    marginTop: 70,
+    backgroundColor:'#57B8FF',
+    margin: 50,
+    borderRadius: 8,
+    elevation: 4,
+    shadowOffset:{
+      width: 0,
+      height:2
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 4
+  },
+  
+  btn_text: {
+    textAlign: 'center',
+    fontSize: 20,
+    fontFamily: 'Quicksand-Bold',
+    marginBottom: 7,
+    marginTop:2
   }
   
 })

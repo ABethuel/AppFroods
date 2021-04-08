@@ -50,7 +50,14 @@ const styles = StyleSheet.create({
         marginBottom : 0,
         margin :32,
         marginTop: 20,
-        flexDirection: 'row'
+        flexDirection: 'row',
+        elevation: 4,
+        shadowOffset:{
+          width: 0,
+          height:2
+        },
+        shadowOpacity: 0.1,
+        shadowRadius: 4
       },
     
       images: {

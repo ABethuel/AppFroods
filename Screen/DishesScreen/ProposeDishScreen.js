@@ -11,9 +11,6 @@ class ChoiceDishScreen extends React.Component {
     return (
       <View style={styles.main_container}>
         <HeaderInscription/>
-          
-          
-
           <View style={styles.container}>
             <Text style={{fontFamily:'Quicksand-Bold', fontSize:20}}>Proposer un plat</Text>
           </View>

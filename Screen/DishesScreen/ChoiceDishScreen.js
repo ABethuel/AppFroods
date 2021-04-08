@@ -108,6 +108,13 @@ const styles = StyleSheet.create({
     marginRight : 15,
     marginBottom:38,
     borderRadius:10,
+    elevation: 4,
+    shadowOffset:{
+      width: 0,
+      height:2
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 4
   },
 
   text: {

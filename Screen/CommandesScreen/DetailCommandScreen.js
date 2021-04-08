@@ -127,7 +127,8 @@ const styles = StyleSheet.create({
   },
 
   container:{
-    flex:1
+    flex:1,
+    
   },
 
   dish_container:{
@@ -136,7 +137,14 @@ const styles = StyleSheet.create({
     backgroundColor:'#57B8FF',
     margin: 20,
     marginTop: 30,
-    borderRadius: 10
+    borderRadius: 10,
+    elevation: 4,
+    shadowOffset:{
+      width: 0,
+      height:2
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 4
   },
 
   image_dish:{
@@ -202,7 +210,8 @@ const styles = StyleSheet.create({
     fontFamily:'Quicksand-Bold', 
     fontSize:20,
     textAlign:'center',
-    margin: 5
+    margin: 5,
+    marginBottom: 8
   },
 
   text:{
@@ -217,17 +226,16 @@ const styles = StyleSheet.create({
     margin: 20,
     marginTop: 15,
     marginBottom: 5,
-    borderRadius: 10
+    borderRadius: 10,
+    elevation: 4,
+    shadowOffset:{
+      width: 0,
+      height:2
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 4
   },
 
-  btn_show:{
-    justifyContent:'center',
-    alignItems:'center',
-    backgroundColor:'#57B8FF',
-    margin: 20,
-    marginBottom: 25,
-    borderRadius: 10
-  },
 })
 
 const mapStateToProps = (state) => {

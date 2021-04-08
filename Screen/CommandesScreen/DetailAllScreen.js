@@ -73,7 +73,14 @@ const styles = StyleSheet.create({
     backgroundColor:'#57B8FF',
     margin: 20,
     marginTop: 30,
-    borderRadius: 10
+    borderRadius: 10,
+    elevation: 8,
+    shadowOffset:{
+      width: 0,
+      height:2
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 4
   },
 
   image_dish:{

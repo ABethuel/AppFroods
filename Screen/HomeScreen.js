@@ -75,7 +75,14 @@ const styles = StyleSheet.create({
         marginTop:150,
         margin : 65,
         borderRadius: 8,
-        marginBottom:10
+        marginBottom:10,
+        elevation: 4,
+        shadowOffset:{
+            width: 0,
+            height:2
+        },
+        shadowOpacity: 0.1,
+        shadowRadius: 4
     },
 
     proposer:{
@@ -84,6 +91,13 @@ const styles = StyleSheet.create({
         marginTop:20,
         margin : 65,
         borderRadius: 8,
+        elevation: 4,
+        shadowOffset:{
+            width: 0,
+            height:2
+        },
+        shadowOpacity: 0.1,
+        shadowRadius: 4
     },
     
     image: {

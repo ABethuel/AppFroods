@@ -53,6 +53,16 @@
       "adress": "12 avenue René Coty",
       "description": "Sandwich au thon concocté avec amour",
       "image": "https://assets.afcdn.com/recipe/20160928/21224_w1024h1024c1cx2128cy1416.webp"
+    },
+    {
+      "id": "164563",
+      "name": "Salade grecque",
+      "date": "12/01/1712",
+      "from": "Jean-Kevin ",
+      "price": "3",
+      "category": "salade",
+      "adress": "12 rue daguerre",
+      "description": "Salade grecque concoctée avec amour",
+      "image": "https://media.soscuisine.com/images/recettes/large/63.jpg"
     }
-  
 ]

@@ -15,7 +15,7 @@ class ActualCommandScreen extends React.Component {
     this.props.navigation.navigate("DetailActual", {id: id, name: name, date: date, from: from, price: price, category: category, adress: adress, description: description, image:image})
   }
 
-  _displayNoCommand() {
+  _display() {
     if (this.props.commandMade.length === 0) {
       return (
         <View style={styles.empty_container}>
@@ -52,8 +52,9 @@ class ActualCommandScreen extends React.Component {
           </TouchableOpacity>
         </View>
         
-        {this._displayNoCommand()}
-
+        
+        {this._display()}
+     
       </View>
     )
   }
@@ -104,8 +105,7 @@ const styles = StyleSheet.create({
 
   empty_container: {
     alignItems:'center',
-    justifyContent:'center',
-    flex : 2,
+    justifyContent: 'center',
     fontFamily:'Quicksand-Bold'
   },
 })
