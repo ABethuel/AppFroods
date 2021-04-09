@@ -82,8 +82,11 @@ class ConnexionScreen extends React.Component {
                             <Text style={{fontFamily: 'Quicksand-Bold',}}>Mot de passe</Text>
                             <TextInput 
                                 style={styles.input}
+                            
+                                secureTextEntry={true}
                                 onChangeText={(text) => this._getTextPassword(text)}
                                 />
+                            
                         </View>
                     </View>
     
