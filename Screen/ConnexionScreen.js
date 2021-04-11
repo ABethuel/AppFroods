@@ -54,9 +54,6 @@ class ConnexionScreen extends React.Component {
         }
     }
 
-    _test(){
-        Alert.alert()
-    }
     _displayScreen() {
         if (this.state.isLoading === true){
             return(
@@ -82,7 +79,6 @@ class ConnexionScreen extends React.Component {
                             <Text style={{fontFamily: 'Quicksand-Bold',}}>Mot de passe</Text>
                             <TextInput 
                                 style={styles.input}
-                            
                                 secureTextEntry={true}
                                 onChangeText={(text) => this._getTextPassword(text)}
                                 />
