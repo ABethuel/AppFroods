@@ -46,11 +46,11 @@ class InscriptionScreen extends React.Component {
                         <TextInput style={styles.input}/>
                     </View>
                     <View style={styles.empty_complete}>
-                        <Text style={{fontFamily: 'Quicksand-Bold',}}>Mot de passe</Text>
+                        <Text style={{fontFamily: 'Quicksand-Bold',}} secureTextEntry={true}>Mot de passe</Text>
                         <TextInput style={styles.input}/>
                     </View>
                     <View style={styles.empty_complete}>
-                        <Text style={{fontFamily: 'Quicksand-Bold',}}>Confirmer mot de passe</Text>
+                        <Text style={{fontFamily: 'Quicksand-Bold',}} secureTextEntry={true}>Confirmer mot de passe</Text>
                         <TextInput style={styles.input}/>
                     </View>
 

@@ -3,9 +3,25 @@
 import React from 'react'
 import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
 import { ScrollView, TextInput, TouchableOpacity } from 'react-native-gesture-handler'
+import Menu, { MenuItem, MenuDivider } from 'react-native-material-menu';
+
 import HeaderInscription from '../../Components/HeaderInscription'
 
 class ChoiceDishScreen extends React.Component {
+
+  _menu = null;
+
+  setMenuRef = ref => {
+    this._menu = ref;
+  };
+
+  hideMenu = () => {
+    this._menu.hide();
+  };
+
+  showMenu = () => {
+    this._menu.show();
+  };
 
   render() {
     return (
@@ -28,11 +44,29 @@ class ChoiceDishScreen extends React.Component {
             </View>
 
             <View style={styles.questionnaire}>
-              <View style={styles.title}>
+              <View style={styles.input_block}>
                 <Text style={{marginRight: 5, fontFamily: 'Quicksand-Bold', fontSize: 18}}>Nom du plat :</Text>
-                <TextInput style={styles.input_title} placeholder='Saisir le nom du plat'/>
+                <TextInput style={styles.input} placeholder='Saisir le nom du plat' clearButtonMode='always'/>
+              </View>
+              <View style={styles.input_block}>
+                <Text style={{marginRight: 5, fontFamily: 'Quicksand-Bold', fontSize: 18}}>Description :</Text>
+                <TextInput style={styles.input} placeholder='Saisir une description' multiline={true} numberOfLines={4} clearButtonMode='always'/>
+              </View>
+              <View style={styles.input_block}>
+                <Text style={{marginRight: 5, fontFamily: 'Quicksand-Bold', fontSize: 18}}>Catégorie :</Text>
+                <Menu
+                  ref={this.setMenuRef}
+                  button={<Text onPress={this.showMenu}>Séléctionner une catégorie</Text>}
+                 >
+                  <MenuItem onPress={this.hideMenu}>Menu item 1</MenuItem>
+                  <MenuItem onPress={this.hideMenu}>Menu item 2</MenuItem>
+                  <MenuItem onPress={this.hideMenu} disabled> Menu item 3</MenuItem>
+                  <MenuDivider />
+                <MenuItem onPress={this.hideMenu}>Menu item 4</MenuItem>
+              </Menu>
               </View>
             </View>
+
           </View>
 
           <TouchableOpacity style={styles.btn_add}>
@@ -86,7 +120,6 @@ const styles = StyleSheet.create({
   image_container: {
     height: 200, 
     margin: 15,
-    width:'90%',
     borderRadius: 10,
     backgroundColor: '#DDDDDD'
   },
@@ -128,16 +161,16 @@ const styles = StyleSheet.create({
     marginRight: 15
   },
 
-  title: {
-    flexDirection: 'row'
+  input_block: {
+    marginBottom: 20
   },
 
-  input_title: {
+  input: {
     fontFamily: 'Quicksand-SemiBold',
     backgroundColor: '#DDDDDD',
-    borderRadius: 18,
-    width: '55%'
-  
+    borderRadius: 8,
+    textAlign: 'center',
+    marginTop: 10
   }
 })
 
