@@ -22,6 +22,7 @@ class ChoiceDishScreen extends React.Component {
   showMenu = () => {
     this._menu.show();
   };
+  
 
   render() {
     return (
@@ -52,18 +53,31 @@ class ChoiceDishScreen extends React.Component {
                 <Text style={{marginRight: 5, fontFamily: 'Quicksand-Bold', fontSize: 18}}>Description :</Text>
                 <TextInput style={styles.input} placeholder='Saisir une description' multiline={true} numberOfLines={4} clearButtonMode='always'/>
               </View>
-              <View style={styles.input_block}>
+
+              <View style={styles.input_block2}>
                 <Text style={{marginRight: 5, fontFamily: 'Quicksand-Bold', fontSize: 18}}>Catégorie :</Text>
                 <Menu
                   ref={this.setMenuRef}
-                  button={<Text onPress={this.showMenu}>Séléctionner une catégorie</Text>}
+                  button={<TouchableOpacity styles={styles.scrolling_choice} onPress={this.showMenu}>
+                            <Text style={{fontFamily: 'Quicksand-SemiBold', textAlign: 'center', fontSize: 18, color:'#6F6F6F',}}>Sélection</Text>
+                          </TouchableOpacity>}
                  >
-                  <MenuItem onPress={this.hideMenu}>Menu item 1</MenuItem>
-                  <MenuItem onPress={this.hideMenu}>Menu item 2</MenuItem>
-                  <MenuItem onPress={this.hideMenu} disabled> Menu item 3</MenuItem>
-                  <MenuDivider />
-                <MenuItem onPress={this.hideMenu}>Menu item 4</MenuItem>
+                  <MenuItem onPress={this.hideMenu}>Salades</MenuItem>
+                  <MenuItem onPress={this.hideMenu}>Sandwich</MenuItem>
+                  <MenuItem onPress={this.hideMenu}>Italien</MenuItem>
+                  <MenuItem onPress={this.hideMenu}>Asiatique</MenuItem>
+                  <MenuItem onPress={this.hideMenu}>Vegan</MenuItem>
+                  <MenuItem onPress={this.hideMenu}>Autres</MenuItem>
               </Menu>
+              </View>
+
+              <View style={styles.input_block}>
+                <Text style={{marginRight: 5, fontFamily: 'Quicksand-Bold', fontSize: 18}}>Adresse :</Text>
+                <TextInput style={styles.input} placeholder='Saisir une adresse' multiline={true} clearButtonMode='always'/>
+              </View>
+              <View style={styles.input_block}>
+                <Text style={{marginRight: 5, fontFamily: 'Quicksand-Bold', fontSize: 18}}>Prix :</Text>
+                <TextInput style={styles.input} placeholder='Saisir un prix' clearButtonMode='always'/>
               </View>
             </View>
 
@@ -137,7 +151,7 @@ const styles = StyleSheet.create({
     backgroundColor:'#57B8FF',
     margin: 20,
     marginTop: 15,
-    marginBottom: 5,
+    marginBottom: 40,
     borderRadius: 10,
     elevation: 4,
     shadowOffset:{
@@ -165,12 +179,25 @@ const styles = StyleSheet.create({
     marginBottom: 20
   },
 
+  input_block2: {
+    marginBottom: 20,
+    flexDirection: 'row'
+  },
+
   input: {
     fontFamily: 'Quicksand-SemiBold',
     backgroundColor: '#DDDDDD',
     borderRadius: 8,
     textAlign: 'center',
     marginTop: 10
+  }, 
+
+  scrolling_choice:  {
+    backgroundColor: '#DDDDDD',
+    borderRadius: 8,
+    height: 10,
+    marginRight: 15
+    
   }
 })
 
