@@ -77,7 +77,7 @@ class ChoiceDishScreen extends React.Component {
         <ScrollView>
           <View style={styles.container}>
             <View style={styles.image_container}>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => this.props.navigation.navigate("Camera")}>
                 <ImageBackground style={styles.add_image} source={require('../../images/add.png')}/>
               </TouchableOpacity>
             </View>
