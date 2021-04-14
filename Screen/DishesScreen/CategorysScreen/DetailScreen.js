@@ -78,13 +78,13 @@ class DetailScreen extends React.Component {
             style={styles.image_dish}
             source={{uri: image}}
           />
-          <View style={styles.text_container}>
-            <Text style={styles.text_name}>{name}</Text>
-            <Text style={styles.text_price}>{price}P</Text>
-            <Text style={styles.text_description}>{description}</Text>
-            <Text style={styles.text_caracteristics}>Catégorie : {category}</Text>
-            <Text style={styles.text_caracteristics}>De : {from}</Text>
-            <Text style={styles.text_adress}>Adresse : {adress}</Text>
+            <View style={styles.text_container}>
+              <Text style={styles.text_name}>{name}</Text>
+              <Text style={styles.text_price}>{price}P</Text>
+              <Text style={styles.text_description}>{description}</Text>
+              <Text style={styles.text_caracteristics}>Catégorie : {category}</Text>
+              <Text style={styles.text_caracteristics}>De : {from}</Text>
+              <Text style={styles.text_adress}>Adresse : {adress}</Text>
             </View>
           </View>
   

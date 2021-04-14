@@ -9,20 +9,58 @@ import HeaderInscription from '../../Components/HeaderInscription'
 
 class ChoiceDishScreen extends React.Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      category: 'Sélection'
+    }
+  }
+
   _menu = null;
 
   setMenuRef = ref => {
     this._menu = ref;
   };
 
-  hideMenu = () => {
-    this._menu.hide();
-  };
-
   showMenu = () => {
     this._menu.show();
   };
   
+  menuSalad = () => {
+    this._menu.hide()
+    this.state.category = 'Salade'
+    this.forceUpdate()
+  }
+
+  menuSandwhich = () => {
+    this._menu.hide()
+    this.state.category = 'Sandwich'
+    this.forceUpdate()
+  }
+
+  menuItalien = () => {
+    this._menu.hide()
+    this.state.category = 'Italien'
+    this.forceUpdate()
+  }
+
+  menuAsiatique = () => {
+    this._menu.hide()
+    this.state.category = 'Asiatique'
+    this.forceUpdate()
+  }
+
+  menuVegan = () => {
+    this._menu.hide()
+    this.state.category = 'Vegan'
+    this.forceUpdate()
+  }
+
+  menuOther = () => {
+    this._menu.hide()
+    this.state.category = 'Autre'
+    this.forceUpdate()
+  }
 
   render() {
     return (
@@ -55,19 +93,19 @@ class ChoiceDishScreen extends React.Component {
               </View>
 
               <View style={styles.input_block2}>
-                <Text style={{marginRight: 5, fontFamily: 'Quicksand-Bold', fontSize: 18}}>Catégorie :</Text>
+                <Text style={{marginRight: 5, fontFamily: 'Quicksand-Bold', fontSize: 18, marginRight: 12}}>Catégorie :</Text>
                 <Menu
                   ref={this.setMenuRef}
                   button={<TouchableOpacity styles={styles.scrolling_choice} onPress={this.showMenu}>
-                            <Text style={{fontFamily: 'Quicksand-SemiBold', textAlign: 'center', fontSize: 18, color:'#6F6F6F',}}>Sélection</Text>
+                            <Text style={{fontFamily: 'Quicksand-SemiBold', textAlign: 'center', fontSize: 18, color:'#6F6F6F',}}>{this.state.category}</Text>
                           </TouchableOpacity>}
                  >
-                  <MenuItem onPress={this.hideMenu}>Salades</MenuItem>
-                  <MenuItem onPress={this.hideMenu}>Sandwich</MenuItem>
-                  <MenuItem onPress={this.hideMenu}>Italien</MenuItem>
-                  <MenuItem onPress={this.hideMenu}>Asiatique</MenuItem>
-                  <MenuItem onPress={this.hideMenu}>Vegan</MenuItem>
-                  <MenuItem onPress={this.hideMenu}>Autres</MenuItem>
+                  <MenuItem onPress={this.menuSalad}>Salades</MenuItem>
+                  <MenuItem onPress={this.menuSandwhich}>Sandwich</MenuItem>
+                  <MenuItem onPress={this.menuItalien}>Italien</MenuItem>
+                  <MenuItem onPress={this.menuAsiatique}>Asiatique</MenuItem>
+                  <MenuItem onPress={this.menuVegan}>Vegan</MenuItem>
+                  <MenuItem onPress={this.menuOther}>Autres</MenuItem>
               </Menu>
               </View>
 
