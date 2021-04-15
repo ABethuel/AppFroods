@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = (state) => {
   return {
-    commandMade: state.commandMade
+    commandMade: state.toggleCommand.commandMade
   }
 }
 

@@ -3,8 +3,7 @@
 import React from 'react'
 import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
 import { ScrollView, TextInput, TouchableOpacity } from 'react-native-gesture-handler'
-import Menu, { MenuItem, MenuDivider } from 'react-native-material-menu';
-
+import Menu, { MenuItem } from 'react-native-material-menu';
 import HeaderInscription from '../../Components/HeaderInscription'
 
 class ChoiceDishScreen extends React.Component {

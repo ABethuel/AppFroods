@@ -6,8 +6,6 @@ import { FontAwesome, MaterialIcons, MaterialCommunityIcons } from '@expo/vector
 import * as ImagePicker from 'expo-image-picker';
 
 
-
-
 export default class App extends React.Component {
   state = {
     hasPermission: null,
@@ -44,17 +42,15 @@ export default class App extends React.Component {
   takePicture = async () => {
     if (this.camera) {
       let photo = await this.camera.takePictureAsync();
-
     }
   }
 
   pickImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.Images
-    });
+    })
   }
   
-
   render(){
     const { hasPermission } = this.state
     if (hasPermission === null) {
