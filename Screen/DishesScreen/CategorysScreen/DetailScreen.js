@@ -83,7 +83,7 @@ class DetailScreen extends React.Component {
               <Text style={styles.text_price}>{price}P</Text>
               <Text style={styles.text_description}>{description}</Text>
               <Text style={styles.text_caracteristics}>Catégorie : {category}</Text>
-              <Text style={styles.text_caracteristics}>De : {from}</Text>
+              <Text style={styles.text_caracteristics}>De : {from.firstName} {from.lastName}</Text>
               <Text style={styles.text_adress}>Adresse : {adress}</Text>
             </View>
           </View>

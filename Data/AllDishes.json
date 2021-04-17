@@ -3,7 +3,13 @@
       "id": "7486",
       "name": "Salade Cesar",
       "date": "16/06/2020",
-      "from": "Jean Dupont",
+      "from": {
+        "firstName": "Jean",
+        "lastName" : "Dupont",
+        "email": "jean.dupont@eleve.isep.fr",
+        "telephone": "07 06 05 03 02",
+        "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAvzDLwzKvm6L1GTdywuKSEqiX32jUssFK5znxG0Nhiyi3XXhkO_xJebgcTeu5j8JQv-8&usqp=CAU"
+        },
       "price": "3",
       "category": "salade",
       "adress": "14 rue Sauger",
@@ -14,7 +20,13 @@
       "id": "785",
       "name": "Falafels",
       "date": "18/11/2001",
-      "from": "Charles de Gaulle",
+      "from": {
+        "firstName":"Charles",
+        "lastName" : "de Gaulle",
+        "email": "charles.degaulle@eleve.isep.fr",
+        "telephone": "06 12 30 41 67",
+        "picture": "https://www.babelio.com/users/AVT_Charles-de-Gaulle_7443.jpg"
+      },
       "price": "8",
       "category": "vegan",
       "adress": "18 rue Saint Jacques",
@@ -25,7 +37,13 @@
     "id": "1651",
     "name": "Pizza Regina",
     "date": "22/09/2020",
-    "from": "Emmanuel Macron",
+    "from": {
+      "firstName": "Emmanuel",
+      "lastName" : "Macron",
+      "email": "manu.macron@eleve.isep.fr",
+      "telephone": "07 01 24 18 84",
+      "picture": "https://www.babelio.com/users/AVT_Charles-de-Gaulle_7443.jpg"
+    },
     "price": "12",
     "category": "italien",
     "adress": "4 boulevard Saint Michel",
@@ -33,36 +51,54 @@
     "image": "https://img.mesrecettesfaciles.fr/wp-content/uploads/2016/08/pizza-regina-1000x500.jpg"
     },
     {
-      "id": "123",
-      "name": "Ramens",
-      "date": "03/03/2021",
-      "from": "Lionel Messi",
-      "price": "7",
-      "category": "asiatique",
-      "adress": "125 rue daguerre",
-      "description": "Ramens concoctés avec amour",
-      "image": "https://img.cuisineaz.com/660x660/2018-12-30/i145407-ramen-au-poulet.jpeg"
+    "id": "123",
+    "name": "Ramens",
+    "date": "03/03/2021",
+    "from": {
+      "firstName": "Lionel",
+      "lastName" : "Messi",
+      "email": "leo.messi@eleve.isep.fr",
+      "telephone": "06 22 33 44 55",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg"
+    },
+    "price": "7",
+    "category": "asiatique",
+    "adress": "125 rue daguerre",
+    "description": "Ramens concoctés avec amour",
+    "image": "https://img.cuisineaz.com/660x660/2018-12-30/i145407-ramen-au-poulet.jpeg"
     },
     {
-      "id": "4987",
-      "name": "Sandwich au thon",
-      "date": "2/01/2020",
-      "from": "Vercingétorix",
-      "price": "7",
-      "category": "sandwich",
-      "adress": "12 avenue René Coty",
-      "description": "Sandwich au thon concocté avec amour",
-      "image": "https://assets.afcdn.com/recipe/20160928/21224_w1024h1024c1cx2128cy1416.webp"
+    "id": "4987",
+    "name": "Sandwich au thon",
+    "date": "2/01/2020",
+    "from": {
+      "firstName": "Vercingétorix",
+      "lastName": "",
+      "email": "leo.messi@eleve.isep.fr",
+      "telephone": "06 22 33 44 55",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg"
+    },
+    "price": "7",
+    "category": "sandwich",
+    "adress": "12 avenue René Coty",
+    "description": "Sandwich au thon concocté avec amour",
+    "image": "https://assets.afcdn.com/recipe/20160928/21224_w1024h1024c1cx2128cy1416.webp"
     },
     {
-      "id": "164563",
-      "name": "Salade grecque",
-      "date": "12/01/1712",
-      "from": "Jean-Kevin ",
-      "price": "3",
-      "category": "salade",
-      "adress": "12 rue daguerre",
-      "description": "Salade grecque concoctée avec amour",
-      "image": "https://media.soscuisine.com/images/recettes/large/63.jpg"
+    "id": "164563",
+    "name": "Salade grecque",
+    "date": "12/01/1712",
+    "from": {
+      "firstName": "Daenarys",
+      "lastName" : "Targaryen",
+      "email": "daenarys.targaryen@motherofdragons.queenofwesteros.breakerofchains.isep.fr",
+      "telephone": "06 42 12 23 41",
+      "picture": "https://cdn-s-www.ledauphine.com/images/84AEC9E6-5036-48EC-BA52-B8953AB7CD37/NW_raw/l-une-des-futures-series-adaptee-de-l-univers-de-quot-game-of-thrones-quot-s-interessera-aux-ancetres-de-daenerys-targaryen-photo-hbo-1618581317.jpg"
+    },
+    "price": "3",
+    "category": "salade",
+    "adress": "12 rue daguerre",
+    "description": "Salade grecque concoctée avec amour",
+    "image": "https://media.soscuisine.com/images/recettes/large/63.jpg"
     }
 ]

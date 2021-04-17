@@ -72,7 +72,7 @@ class DetailCommandScreen extends React.Component {
             <Text style={styles.text_price}>{price}P</Text>
             <Text style={styles.text_description}>{description}</Text>
             <Text style={styles.text_caracteristics}>Catégorie : {category}</Text>
-            <Text style={styles.text_caracteristics}>De : {from}</Text>
+            <Text style={styles.text_caracteristics}>De : {from.firstName} {from.lastName}</Text>
             <Text style={styles.text_adress}>Adresse : {adress}</Text>
             </View>
           </View>
@@ -81,6 +81,12 @@ class DetailCommandScreen extends React.Component {
             style={styles.add_container} 
             onPress={() => this._toggleCommand()}>
             {this._displayAddRemoveBtn()}
+          </TouchableOpacity>
+
+          <TouchableOpacity 
+            style={styles.add_container}
+            onPress={() => this.props.navigation.navigate("ProfilCooker")}>
+            <Text style={styles.text_add}>Profil du cuisinier</Text>
           </TouchableOpacity>
 
         </ScrollView>
