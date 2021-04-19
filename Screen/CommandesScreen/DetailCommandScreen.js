@@ -51,7 +51,6 @@ class DetailCommandScreen extends React.Component {
     }
   }
 
-
   _toggleCommand() {
     const action = { type: 'TOGGLE_COMMAND', value: this.state.dish}
     this.props.dispatch(action)
@@ -85,7 +84,7 @@ class DetailCommandScreen extends React.Component {
 
           <TouchableOpacity 
             style={styles.add_container}
-            onPress={() => this.props.navigation.navigate("ProfilCooker")}>
+            onPress={() => this.props.navigation.navigate("ProfilCooker", {from})}>
             <Text style={styles.text_add}>Profil du cuisinier</Text>
           </TouchableOpacity>
 

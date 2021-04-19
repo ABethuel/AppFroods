@@ -1,7 +1,7 @@
 // Components/Favorites.js
 
 import React from 'react'
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Alert, Image, StyleSheet, Text, View } from 'react-native'
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
 import HeaderInscription from '../Components/HeaderInscription'
 import {getProfil} from '../Data/commandsData'
@@ -9,6 +9,10 @@ import {getProfil} from '../Data/commandsData'
 
 
 class ProfilScreen extends React.Component {
+
+  _editProfil() {
+    Alert.alert('Modifier le profil')
+  }
 
   render() {
     const profil = getProfil()
@@ -25,7 +29,7 @@ class ProfilScreen extends React.Component {
             <Text style={styles.text}>Email : {profil.email}</Text>
           </View>
 
-          <TouchableOpacity style={styles.btn}>
+          <TouchableOpacity style={styles.btn} onPress={() => this._editProfil()}>
             <Text style={styles.btn_text}>Modifier le profil</Text>
           </TouchableOpacity>
       </ScrollView>

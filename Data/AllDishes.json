@@ -42,7 +42,7 @@
       "lastName" : "Macron",
       "email": "manu.macron@eleve.isep.fr",
       "telephone": "07 01 24 18 84",
-      "picture": "https://www.babelio.com/users/AVT_Charles-de-Gaulle_7443.jpg"
+      "picture": "https://i.pinimg.com/originals/8a/23/04/8a2304f201e14550c4326bc86dc88a03.jpg"
     },
     "price": "12",
     "category": "italien",
@@ -74,9 +74,9 @@
     "from": {
       "firstName": "Vercingétorix",
       "lastName": "",
-      "email": "leo.messi@eleve.isep.fr",
-      "telephone": "06 22 33 44 55",
-      "picture": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg"
+      "email": "vercingetorix@gaullois.isep.fr",
+      "telephone": "06 14 07 12 25",
+      "picture": "https://www.musee.patrimoine.lepuyenvelay.fr/wp-content/uploads/2020/06/Musee_Crozatier_Vercingetorix_Royer_titre-1152x630.jpg"
     },
     "price": "7",
     "category": "sandwich",
