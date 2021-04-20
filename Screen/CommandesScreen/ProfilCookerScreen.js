@@ -36,7 +36,7 @@ class ProfilCookerScreen extends React.Component {
             </View>
 
             <TouchableOpacity style={styles.btn} onPress={() => this.call()}>
-              <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center'  }}>
+              <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
                 <Ionicons name="call" size={24} color="black"  />
                 <Text style={styles.btn_text}>Contacter</Text>
               </View>

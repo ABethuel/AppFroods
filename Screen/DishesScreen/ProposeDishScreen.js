@@ -5,16 +5,20 @@ import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
 import { ScrollView, TextInput, TouchableOpacity } from 'react-native-gesture-handler'
 import Menu, { MenuItem } from 'react-native-material-menu';
 import HeaderInscription from '../../Components/HeaderInscription'
+import * as ImagePicker from "expo-image-picker";
+
 
 class ChoiceDishScreen extends React.Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      category: 'Sélection'
+      category: 'Sélection', 
+      image: null,
+      setImage : null
     }
   }
-
+  
   _menu = null;
 
   setMenuRef = ref => {
@@ -61,6 +65,31 @@ class ChoiceDishScreen extends React.Component {
     this.forceUpdate()
   }
 
+  getPermissionAsync = async () => {
+    // Camera roll Permission 
+    if (Platform.OS !== "web") {
+      const {
+        status,
+      } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+      if (status !== "granted") {
+        alert("Sorry, we need camera roll permissions to make this work!");
+      }
+    }
+  }
+
+  pickImage = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All, 
+      allowsEditing: true,
+      quality: 1
+    })
+    console.log(result);
+
+    if (!result.cancelled) {
+      this.setState({setImage:result.uri})
+    }
+  }
+
   render() {
     return (
       <View style={styles.main_container}>
@@ -68,7 +97,7 @@ class ChoiceDishScreen extends React.Component {
 
           <View style={styles.header}>
             <TouchableOpacity onPress={() => this.props.navigation.navigate("HomeScreen")}>
-              <Image style={styles.image} source={require('../../images/back.png')}/>
+                <Image style={styles.image} source={require('../../images/back.png')}/>
             </TouchableOpacity>
             <Text style={styles.text_title}>Proposer un plat</Text>
           </View>
@@ -76,8 +105,15 @@ class ChoiceDishScreen extends React.Component {
         <ScrollView>
           <View style={styles.container}>
             <View style={styles.image_container}>
-              <TouchableOpacity onPress={() => this.props.navigation.navigate("Camera")}>
-                <ImageBackground style={styles.add_image} source={require('../../images/add.png')}/>
+              <TouchableOpacity onPress={this.pickImage}>
+                {!this.state.setImage && (
+                  <Image style={styles.add_image} source={require('../../images/add.png')}/>
+                )}
+                {this.state.setImage && (
+                  <Image source={{ uri: this.state.setImage }}
+                    style={{height: 200, 
+                            borderRadius: 10,}}/>
+                )}
               </TouchableOpacity>
             </View>
 
