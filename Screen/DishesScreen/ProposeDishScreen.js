@@ -14,8 +14,7 @@ class ChoiceDishScreen extends React.Component {
     super(props)
     this.state = {
       category: 'Sélection', 
-      image: null,
-      setImage : null
+      imageCamera : null
     }
   }
   
@@ -77,8 +76,8 @@ class ChoiceDishScreen extends React.Component {
     }
   }
 
-  pickImage = async () => {
-    let result = await ImagePicker.launchImageLibraryAsync({
+  getImageFromCam = async () => {
+    let result = await ImagePicker.launchCameraAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All, 
       allowsEditing: true,
       quality: 1
@@ -86,7 +85,7 @@ class ChoiceDishScreen extends React.Component {
     console.log(result);
 
     if (!result.cancelled) {
-      this.setState({setImage:result.uri})
+      this.setState({imageCamera:result.uri})
     }
   }
 
@@ -105,12 +104,12 @@ class ChoiceDishScreen extends React.Component {
         <ScrollView>
           <View style={styles.container}>
             <View style={styles.image_container}>
-              <TouchableOpacity onPress={this.pickImage}>
-                {!this.state.setImage && (
+              <TouchableOpacity onPress={this.getImageFromCam}>
+                {!this.state.imageCamera && (
                   <Image style={styles.add_image} source={require('../../images/add.png')}/>
                 )}
-                {this.state.setImage && (
-                  <Image source={{ uri: this.state.setImage }}
+                {this.state.imageCamera && (
+                  <Image source={{ uri: this.state.imageCamera }}
                     style={{height: 200, 
                             borderRadius: 10,}}/>
                 )}
