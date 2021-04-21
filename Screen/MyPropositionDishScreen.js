@@ -1,10 +1,28 @@
 import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import { connect } from 'react-redux'
 import { FlatList } from 'react-native-gesture-handler'
 import HeaderInscription from '../Components/HeaderInscription'
 
 
 class MyPropositionDishScreen extends React.Component {
+
+    _display() {
+      if (this.props.propositionCommand.length === 0){
+        return(
+          <View style={styles.container}>
+            <Text style={{fontFamily:'Quicksand-Bold', fontSize:16}}>Aucun plat proposé !</Text>
+          </View>
+        )
+      }
+      else {
+        return(
+          <View style={styles.container}>
+            <Text style={{fontFamily:'Quicksand-Bold', fontSize:16}}>Proposition en cours</Text>
+          </View>
+        )
+      }
+    }
 
     render() {
       return (
@@ -20,10 +38,8 @@ class MyPropositionDishScreen extends React.Component {
               <Text style={styles.text}>Anciennes propositions</Text>
             </TouchableOpacity>
           </View>
-  
-          <View style={styles.container}>
-            <Text style={{fontFamily:'Quicksand-Bold'}, {fontSize:16}}>Aucun plat proposé !</Text>
-          </View>
+
+          {this._display()}
         </View>
       )
     }
@@ -73,4 +89,10 @@ const styles = StyleSheet.create({
     }
   })
   
-  export default MyPropositionDishScreen
+  const mapStateToProps = (state) => {
+    return {
+      propositionCommand: state.toggleProposition.propositionCommand
+    }
+  }
+  
+  export default connect(mapStateToProps)(MyPropositionDishScreen)

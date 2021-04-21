@@ -3,12 +3,14 @@
 import React from 'react'
 import { Alert, Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
 import { ScrollView, TextInput, TouchableOpacity } from 'react-native-gesture-handler'
+import { connect } from 'react-redux'
+
 import Menu, { MenuItem } from 'react-native-material-menu';
 import HeaderInscription from '../../Components/HeaderInscription'
 import * as ImagePicker from "expo-image-picker";
 
 
-class ChoiceDishScreen extends React.Component {
+class ProposeDishScreen extends React.Component {
 
   constructor(props) {
     super(props)
@@ -114,22 +116,27 @@ class ChoiceDishScreen extends React.Component {
   }
 
   _getData(){
+    const plat = {
+      id: this.getId(1,1000000),
+      image: this.state.imageCamera,
+      name: this.state.textName, 
+      description: this.state.textDescription,
+      category: this.state.category,
+      adress: this.state.textAdress,
+      price: this.state.textPrice
+    }
     if (this.state.textAdress === '' || this.state.textDescription === '' || this.state.textName === '' || 
         this.state.textPrice === '' || this.state.category === 'Sélection' || this.state.imageCamera === null) {
       Alert.alert('Veuillez remplir tous les champs')
     }
     else {
-      const plat = {
-        id: this.getId(1,1000000),
-        image: this.state.imageCamera,
-        name: this.state.textName, 
-        description: this.state.textDescription,
-        category: this.state.category,
-        adress: this.state.textAdress,
-        price: this.state.textPrice
-      }
-      this.state.data.push(plat)
-      console.log(this.state.data)
+        const action = { type: 'TOGGLE_PROPOSITIOn', value: plat}
+        this.props.dispatch(action)
+        console.log(this.props.propositionCommand)
+        Alert.alert('Proposition envoyée')
+
+      /*this.state.data.push(plat)
+      console.log(this.state.data)*/
     }
     
   }
@@ -341,4 +348,10 @@ const styles = StyleSheet.create({
   }
 })
 
-export default ChoiceDishScreen
+const mapStateToProps = (state) => {
+  return {
+    propositionCommand: state.toggleProposition.propositionCommand,
+  }
+}
+
+export default connect(mapStateToProps)(ProposeDishScreen)
