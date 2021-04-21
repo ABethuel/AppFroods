@@ -19,8 +19,13 @@ class ChoiceDishScreen extends React.Component {
       textDescription: '',
       textAdress: '',
       textPrice: '',
-      data: []
+      data: [], 
     }
+  }
+
+  getId(min, max) {
+    const id = Math.floor(Math.random() * (max - min)) + min
+    return id
   }
 
   _menu = null;
@@ -115,6 +120,7 @@ class ChoiceDishScreen extends React.Component {
     }
     else {
       const plat = {
+        id: this.getId(1,1000000),
         image: this.state.imageCamera,
         name: this.state.textName, 
         description: this.state.textDescription,
