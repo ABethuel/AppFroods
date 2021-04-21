@@ -1,7 +1,7 @@
 // Components/Favorites.js
 
 import React from 'react'
-import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
+import { Alert, Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
 import { ScrollView, TextInput, TouchableOpacity } from 'react-native-gesture-handler'
 import Menu, { MenuItem } from 'react-native-material-menu';
 import HeaderInscription from '../../Components/HeaderInscription'
@@ -14,10 +14,15 @@ class ChoiceDishScreen extends React.Component {
     super(props)
     this.state = {
       category: 'Sélection', 
-      imageCamera : null
+      imageCamera : null, 
+      textName: '',
+      textDescription: '',
+      textAdress: '',
+      textPrice: '',
+      data: []
     }
   }
-  
+
   _menu = null;
 
   setMenuRef = ref => {
@@ -31,7 +36,7 @@ class ChoiceDishScreen extends React.Component {
   menuSalad = () => {
     this._menu.hide()
     this.state.category = 'Salade'
-    this.forceUpdate()
+    this.forceUpdate()  
   }
 
   menuSandwhich = () => {
@@ -64,6 +69,22 @@ class ChoiceDishScreen extends React.Component {
     this.forceUpdate()
   }
 
+  _getTextName(text) {
+    this.setState({textName: text})
+  }
+
+  _getTextDescription(text) {
+    this.setState({textDescription: text})
+  }
+
+  _getTextAdress(text) {
+    this.setState({textAdress: text})
+  }
+
+  _getTextPrice(text) {
+    this.setState({textPrice: text})
+  }
+
   getPermissionAsync = async () => {
     // Camera roll Permission 
     if (Platform.OS !== "web") {
@@ -71,7 +92,7 @@ class ChoiceDishScreen extends React.Component {
         status,
       } = await ImagePicker.requestMediaLibraryPermissionsAsync();
       if (status !== "granted") {
-        alert("Sorry, we need camera roll permissions to make this work!");
+        Alert.alert("Sorry, we need camera roll permissions to make this work!");
       }
     }
   }
@@ -82,11 +103,29 @@ class ChoiceDishScreen extends React.Component {
       allowsEditing: true,
       quality: 1
     })
-    console.log(result);
-
     if (!result.cancelled) {
       this.setState({imageCamera:result.uri})
     }
+  }
+
+  _getData(){
+    if (this.state.textAdress === '' || this.state.textDescription === '' || this.state.textName === '' || 
+        this.state.textPrice === '' || this.state.category === 'Sélection' || this.state.imageCamera === null) {
+      Alert.alert('Veuillez remplir tous les champs')
+    }
+    else {
+      const plat = {
+        image: this.state.imageCamera,
+        name: this.state.textName, 
+        description: this.state.textDescription,
+        category: this.state.category,
+        adress: this.state.textAdress,
+        price: this.state.textPrice
+      }
+      this.state.data.push(plat)
+      console.log(this.state.data)
+    }
+    
   }
 
   render() {
@@ -117,13 +156,24 @@ class ChoiceDishScreen extends React.Component {
             </View>
 
             <View style={styles.questionnaire}>
+
               <View style={styles.input_block}>
                 <Text style={{marginRight: 5, fontFamily: 'Quicksand-Bold', fontSize: 18}}>Nom du plat :</Text>
-                <TextInput style={styles.input} placeholder='Saisir le nom du plat' clearButtonMode='always'/>
+                <TextInput 
+                  style={styles.input} 
+                  placeholder='Saisir le nom du plat' 
+                  clearButtonMode='always'
+                  onChangeText={(text) => this._getTextName(text)}/>
               </View>
+
               <View style={styles.input_block}>
                 <Text style={{marginRight: 5, fontFamily: 'Quicksand-Bold', fontSize: 18}}>Description :</Text>
-                <TextInput style={styles.input} placeholder='Saisir une description' multiline={true} numberOfLines={4} clearButtonMode='always'/>
+                <TextInput 
+                  style={styles.input} 
+                  placeholder='Saisir une description' 
+                  multiline={true} numberOfLines={4} 
+                  clearButtonMode='always'
+                  onChangeText={(text) => this._getTextDescription(text)}/>
               </View>
 
               <View style={styles.input_block2}>
@@ -145,17 +195,29 @@ class ChoiceDishScreen extends React.Component {
 
               <View style={styles.input_block}>
                 <Text style={{marginRight: 5, fontFamily: 'Quicksand-Bold', fontSize: 18}}>Adresse :</Text>
-                <TextInput style={styles.input} placeholder='Saisir une adresse' multiline={true} clearButtonMode='always'/>
+                <TextInput 
+                  style={styles.input} 
+                  placeholder='Saisir une adresse' 
+                  multiline={true} 
+                  clearButtonMode='always'
+                  onChangeText={(text) => this._getTextAdress(text)}/>
               </View>
+
               <View style={styles.input_block}>
                 <Text style={{marginRight: 5, fontFamily: 'Quicksand-Bold', fontSize: 18}}>Prix :</Text>
-                <TextInput style={styles.input} placeholder='Saisir un prix' clearButtonMode='always'/>
+                <TextInput 
+                  style={styles.input} 
+                  placeholder='Saisir un prix' 
+                  clearButtonMode='always'
+                  onChangeText={(text) => this._getTextPrice(text)}/>
               </View>
             </View>
 
           </View>
 
-          <TouchableOpacity style={styles.btn_add}>
+          <TouchableOpacity 
+              style={styles.btn_add} 
+              onPress={() => this._getData()}>
             <Text style={styles.text_add}>Soumettre la commande</Text>
           </TouchableOpacity>
           

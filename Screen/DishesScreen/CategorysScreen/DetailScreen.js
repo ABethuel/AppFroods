@@ -22,10 +22,6 @@ class DetailScreen extends React.Component {
     })
   }
 
-  componentDidUpdate() {
-    console.log(this.props.commandMade)
-  }
-
   _displayLoading() {
     if (this.state.isLoading) {
       return (
@@ -64,8 +60,9 @@ class DetailScreen extends React.Component {
   }
 
   _toggleCommand() {
-    const action = { type: 'TOGGLE_COMMAND', value: this.state.dish}
-    this.props.dispatch(action)
+    const action_command = { type: 'TOGGLE_COMMAND', value: this.state.dish}
+    const action_money = { type: 'GET_COIN', value: this.props.route.params.price}
+    this.props.dispatch(action_command)
   }
 
   _displayDetail() {
@@ -75,8 +72,8 @@ class DetailScreen extends React.Component {
         <ScrollView>
           <View style={styles.dish_container}>
            <Image
-            style={styles.image_dish}
-            source={{uri: image}}
+              style={styles.image_dish}
+              source={{uri: image}}
           />
             <View style={styles.text_container}>
               <Text style={styles.text_name}>{name}</Text>
@@ -96,8 +93,7 @@ class DetailScreen extends React.Component {
 
           {this._displayShowCommand()}
   
-        </ScrollView>
-        
+        </ScrollView>       
       )
     }
   }
@@ -267,7 +263,8 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = (state) => {
   return {
-    commandMade: state.toggleCommand.commandMade
+    commandMade: state.toggleCommand.commandMade,
+    coin: state.getMoney.coin
   }
 }
 
