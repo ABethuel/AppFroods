@@ -130,7 +130,7 @@ class ProposeDishScreen extends React.Component {
       Alert.alert('Veuillez remplir tous les champs')
     }
     else {
-        const action = { type: 'TOGGLE_PROPOSITIOn', value: plat}
+        const action = { type: 'TOGGLE_PROPOSITION', value: plat}
         this.props.dispatch(action)
         console.log(this.props.propositionCommand)
         Alert.alert('Proposition envoyée')

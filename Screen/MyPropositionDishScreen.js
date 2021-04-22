@@ -3,46 +3,55 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import { connect } from 'react-redux'
 import { FlatList } from 'react-native-gesture-handler'
 import HeaderInscription from '../Components/HeaderInscription'
+import DisplayMyPropositions from '../Components/DisplayMyPropositions'
 
 
 class MyPropositionDishScreen extends React.Component {
 
-    _display() {
-      if (this.props.propositionCommand.length === 0){
-        return(
-          <View style={styles.container}>
-            <Text style={{fontFamily:'Quicksand-Bold', fontSize:16}}>Aucun plat proposé !</Text>
-          </View>
-        )
-      }
-      else {
-        return(
-          <View style={styles.container}>
-            <Text style={{fontFamily:'Quicksand-Bold', fontSize:16}}>Proposition en cours</Text>
-          </View>
-        )
-      }
-    }
+  _displayDetail= (id, image, name, description, category, adress, price) => {
+    this.props.navigation.navigate("DetailProposition", {id: id, image: image, name: name, description, category, adress, price})
+  }
 
-    render() {
-      return (
-        <View style={styles.main_container}>
-          
-          <HeaderInscription/>
-  
-          <View style={styles.choice_tab}>
-            <TouchableOpacity style={styles.button1}>
-              <Text style={styles.text}>Proposition en attente</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.button2} onPress={() => this.props.navigation.navigate("OldPropositions")}>
-              <Text style={styles.text}>Anciennes propositions</Text>
-            </TouchableOpacity>
-          </View>
-
-          {this._display()}
+  _display() {
+    if (this.props.propositionCommand.length === 0){
+      return(
+        <View style={styles.empty_container}>
+          <Text style={{fontFamily:'Quicksand-Bold', fontSize:20}}>Aucun plat proposé !</Text>
         </View>
       )
     }
+    else {
+      return(
+        <View style={styles.container}>
+          <FlatList
+            data={this.props.propositionCommand}
+            keyExtractor={(item) => item.id.toString()}
+            renderItem={({item}) => <DisplayMyPropositions command={item} displayDetail={this._displayDetail}/>}
+          />
+        </View>
+      )
+    }
+  }
+
+  render() {
+    return (
+      <View style={styles.main_container}>
+        
+        <HeaderInscription/>
+
+        <View style={styles.choice_tab}>
+          <TouchableOpacity style={styles.button1}>
+            <Text style={styles.text}>Proposition en attente</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.button2} onPress={() => this.props.navigation.navigate("OldPropositions")}>
+            <Text style={styles.text}>Anciennes propositions</Text>
+          </TouchableOpacity>
+        </View>
+
+        {this._display()}
+      </View>
+    )
+  }
 }
 
 const styles = StyleSheet.create({
@@ -82,10 +91,16 @@ const styles = StyleSheet.create({
       marginBottom:1
   },
   
-    container: {
-      flex: 1,
-      justifyContent:'center',
-      alignItems:'center'
+  container: {
+    flex : 2,
+    marginTop: 50,
+    marginBottom:10,
+    }, 
+  empty_container: {
+    flex: 1,
+    alignItems:'center',
+    justifyContent: 'center',
+    fontFamily:'Quicksand-Bold'
     }
   })
   

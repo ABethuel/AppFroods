@@ -103,6 +103,7 @@ const styles = StyleSheet.create({
   }, 
 
   empty_container: {
+    flex: 1,
     alignItems:'center',
     justifyContent: 'center',
     fontFamily:'Quicksand-Bold'

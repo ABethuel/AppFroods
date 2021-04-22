@@ -5,7 +5,7 @@ const initialState = {propositionCommand: []}
 function toggleProposition(state = initialState, action) {
     let nextState
     switch (action.type) {
-      case 'TOGGLE_PROPOSITIOn':
+      case 'TOGGLE_PROPOSITION':
         const PropositionIndex = state.propositionCommand.findIndex(item => item.id === action.value.id)
         if (PropositionIndex !== -1) {
           // Le film est déjà dans les favoris, on le supprime de la liste
