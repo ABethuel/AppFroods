@@ -53,7 +53,9 @@ class DetailCommandScreen extends React.Component {
 
   _toggleCommand() {
     const action = { type: 'TOGGLE_COMMAND', value: this.state.dish}
+    const action_money = { type: 'GET_COIN', value: 2}
     this.props.dispatch(action)
+    this.props.dispatch(action_money)
   }
 
   _displayDetail() {
@@ -245,7 +247,8 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = (state) => {
   return {
-    commandMade: state.toggleCommand.commandMade
+    commandMade: state.toggleCommand.commandMade,
+    coin: state.getMoney.coin
   }
 }
 

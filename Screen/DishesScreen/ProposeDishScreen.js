@@ -222,6 +222,7 @@ class ProposeDishScreen extends React.Component {
                   style={styles.input} 
                   placeholder='Saisir un prix' 
                   clearButtonMode='always'
+                  keyboardType = 'numeric'
                   onChangeText={(text) => this._getTextPrice(text)}/>
               </View>
             </View>

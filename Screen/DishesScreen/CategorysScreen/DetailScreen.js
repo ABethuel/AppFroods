@@ -61,8 +61,10 @@ class DetailScreen extends React.Component {
 
   _toggleCommand() {
     const action_command = { type: 'TOGGLE_COMMAND', value: this.state.dish}
-    const action_money = { type: 'GET_COIN', value: this.props.route.params.price}
+    const action_money = { type: 'GET_COIN', value: 2}
     this.props.dispatch(action_command)
+    this.props.dispatch(action_money)
+    console.log(this.props.coin)
   }
 
   _displayDetail() {

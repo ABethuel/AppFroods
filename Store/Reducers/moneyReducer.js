@@ -1,14 +1,14 @@
 
 
-const initialState = {coin: 4}
+const initialState = {coin: 60}
 
 function getMoney(state = initialState, action){
     let nextState
     switch (action.type) {
         case 'GET_COIN':
-            nextState = {
-                ...state, 
-                coin: action.value
+            return {
+                ...state,
+                coin: state.coin - action.value 
             }
             return nextState || state
     default:

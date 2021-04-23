@@ -55,7 +55,8 @@ const styles = StyleSheet.create({
     borderRadius: 8941423486,
     marginTop: 125,
     alignSelf:'center',
-    marginBottom:30
+    marginBottom:30,
+    backgroundColor: '#57B8FF'
   },
 
   text_name: {
