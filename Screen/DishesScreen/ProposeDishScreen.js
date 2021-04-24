@@ -6,8 +6,8 @@ import { ScrollView, TextInput, TouchableOpacity } from 'react-native-gesture-ha
 import { connect } from 'react-redux'
 
 import Menu, { MenuItem } from 'react-native-material-menu';
-import HeaderInscription from '../../Components/HeaderInscription'
 import * as ImagePicker from "expo-image-picker";
+import HeaderComponent from '../../Components/HeaderComponent';
 
 
 class ProposeDishScreen extends React.Component {
@@ -144,7 +144,7 @@ class ProposeDishScreen extends React.Component {
   render() {
     return (
       <View style={styles.main_container}>
-        <HeaderInscription/>
+        <HeaderComponent/>
 
           <View style={styles.header}>
             <TouchableOpacity onPress={() => this.props.navigation.navigate("HomeScreen")}>

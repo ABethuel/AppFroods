@@ -3,7 +3,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, ActivityIndicator } from 'react-native'
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
-import HeaderInscription from '../../Components/HeaderInscription'
+import HeaderComponent from '../../Components/HeaderComponent'
 
 class DetailAllScreen extends React.Component {
 
@@ -12,7 +12,7 @@ class DetailAllScreen extends React.Component {
     const {id, name, date, from, price, category, adress, description, image} = this.props.route.params
     return(
       <View style={styles.main_container}>
-        <HeaderInscription/>
+        <HeaderComponent/>
   
         <View style={styles.header}>
           <TouchableOpacity onPress={() => this.props.navigation.navigate("AllCommands")}>

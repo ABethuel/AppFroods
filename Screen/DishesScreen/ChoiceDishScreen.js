@@ -3,14 +3,14 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import { ScrollView, TextInput } from 'react-native-gesture-handler'
-import HeaderInscription from '../../Components/HeaderInscription'
+import HeaderComponent from '../../Components/HeaderComponent'
 
 class ChoiceDishScreen extends React.Component {
 
   render() {
     return (
       <View style={styles.main_container}>
-        <HeaderInscription/>
+        <HeaderComponent/>
           <View style={styles.header}>
             <TouchableOpacity onPress={() => this.props.navigation.navigate("HomeScreen")}>
               <Image style={styles.image} source={require('../../images/back.png')}/>

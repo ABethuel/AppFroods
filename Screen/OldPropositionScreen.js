@@ -3,9 +3,9 @@
 import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import { FlatList } from 'react-native-gesture-handler'
-import HeaderInscription from '../Components/HeaderInscription'
 import {getOldProposition} from '../Data/commandsData'
 import DisplayOldPropositions from '../Components/DisplayOldPropositions'
+import HeaderComponent from '../Components/HeaderComponent'
 
 class OldPropositionsScreen extends React.Component {
 
@@ -13,7 +13,7 @@ class OldPropositionsScreen extends React.Component {
     return (
       <View style={styles.main_container}>
         
-        <HeaderInscription/>
+        <HeaderComponent/>
 
         <View style={styles.choice_tab}>
           <TouchableOpacity style={styles.button2} onPress={() => this.props.navigation.navigate("MyDish")}>

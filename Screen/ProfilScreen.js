@@ -3,6 +3,7 @@
 import React from 'react'
 import { Alert, Image, StyleSheet, Text, View } from 'react-native'
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
+import HeaderComponent from '../Components/HeaderComponent'
 import HeaderInscription from '../Components/HeaderInscription'
 import {getProfil} from '../Data/commandsData'
 
@@ -18,7 +19,7 @@ class ProfilScreen extends React.Component {
     const profil = getProfil()
     return (
       <ScrollView style={styles.main_container}>
-        <HeaderInscription/>
+        <HeaderComponent/>
           <View style={styles.container}>
             <Image
               style={styles.image}

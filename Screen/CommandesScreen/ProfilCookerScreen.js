@@ -1,8 +1,8 @@
 import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity, Image, Alert } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
-import HeaderInscription from '../../Components/HeaderInscription'
 import { Ionicons } from '@expo/vector-icons';
+import HeaderComponent from '../../Components/HeaderComponent';
 
 
 class ProfilCookerScreen extends React.Component {
@@ -17,7 +17,7 @@ class ProfilCookerScreen extends React.Component {
       return (
         <View style={styles.main_container}>
           
-          <HeaderInscription/>
+          <HeaderComponent/>
           <View style={styles.header}>
             <TouchableOpacity onPress={() => this.props.navigation.navigate("ActualCommand")}>
               <Image style={styles.image} source={require('../../images/back.png')}/>

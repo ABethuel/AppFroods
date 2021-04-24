@@ -3,7 +3,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, ActivityIndicator, VirtualizedList } from 'react-native'
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
-import HeaderInscription from '../../../Components/HeaderInscription'
+import HeaderComponent from '../../../Components/HeaderComponent'
 import { connect } from 'react-redux'
 
 class DetailScreen extends React.Component {
@@ -110,7 +110,7 @@ class DetailScreen extends React.Component {
   render() {
     return(
       <View style={styles.main_container}>
-        <HeaderInscription/>
+        <HeaderComponent/>
   
         <View style={styles.header}>
           <TouchableOpacity onPress={() => this.props.navigation.navigate("Home")}>

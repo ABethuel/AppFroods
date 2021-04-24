@@ -3,7 +3,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, ActivityIndicator } from 'react-native'
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
-import HeaderInscription from '../Components/HeaderInscription'
+import HeaderComponent from '../Components/HeaderComponent'
 
 class HomeScreen extends React.Component {
     constructor(props) {
@@ -33,7 +33,7 @@ class HomeScreen extends React.Component {
         } else {
             return(
                 <View style={styles.main_container}>
-                    <HeaderInscription/>
+                    <HeaderComponent/>
 
                     <TouchableOpacity style={styles.rechercher} onPress={() => this.props.navigation.navigate("Choice")}>
                         <Image style={styles.image} source={require('../images/Home/rechercher.png')}/>

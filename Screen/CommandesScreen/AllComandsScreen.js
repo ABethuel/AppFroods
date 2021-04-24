@@ -3,10 +3,10 @@
 import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import { FlatList } from 'react-native-gesture-handler'
-import HeaderInscription from '../../Components/HeaderInscription'
 import OldCommands from '../../Data/OldCommands'
 import DisplayAllCommands from '../../Components/DisplayAllCommands'
 import {getOldCommands} from '../../Data/commandsData'
+import HeaderComponent from '../../Components/HeaderComponent'
 
 class AllComandsScreen extends React.Component {
 
@@ -18,7 +18,7 @@ class AllComandsScreen extends React.Component {
     return (
       <View style={styles.main_container}>
         
-        <HeaderInscription/>
+        <HeaderComponent/>
 
         <View style={styles.choice_tab}>
           <TouchableOpacity style={styles.button2} onPress={() => this.props.navigation.navigate("ActualCommand")}>

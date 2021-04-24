@@ -3,9 +3,9 @@
 import React from 'react'
 import { StyleSheet, Text, View, FlatList, Image} from 'react-native'
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
-import HeaderInscription from '../../../Components/HeaderInscription'
 import {getAllDishes} from '../../../Data/commandsData'
 import DisplayItalian from '../../../Components/DisplayItalian'
+import HeaderComponent from '../../../Components/HeaderComponent'
 
 
 
@@ -18,7 +18,7 @@ class ItalianScreen extends React.Component {
   render() {
     return (
       <View style={styles.main_container}>
-        <HeaderInscription/>
+        <HeaderComponent/>
 
         <View style={styles.header}>
           <TouchableOpacity onPress={() => this.props.navigation.navigate("Home")}>

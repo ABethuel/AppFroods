@@ -2,8 +2,8 @@ import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import { connect } from 'react-redux'
 import { FlatList } from 'react-native-gesture-handler'
-import HeaderInscription from '../Components/HeaderInscription'
 import DisplayMyPropositions from '../Components/DisplayMyPropositions'
+import HeaderComponent from '../Components/HeaderComponent'
 
 
 class MyPropositionDishScreen extends React.Component {
@@ -37,7 +37,7 @@ class MyPropositionDishScreen extends React.Component {
     return (
       <View style={styles.main_container}>
         
-        <HeaderInscription/>
+        <HeaderComponent/>
 
         <View style={styles.choice_tab}>
           <TouchableOpacity style={styles.button1}>

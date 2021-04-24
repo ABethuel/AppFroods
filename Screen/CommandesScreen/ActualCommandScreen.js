@@ -2,10 +2,10 @@
 
 import React from 'react'
 import { StyleSheet, Text, TouchableOpacity, View} from 'react-native'
-import HeaderInscription from '../../Components/HeaderInscription'
 import { connect } from 'react-redux'
 import DisplayAllCommands from '../../Components/DisplayAllCommands'
 import { FlatList } from 'react-native-gesture-handler'
+import HeaderComponent from '../../Components/HeaderComponent'
 
 
 
@@ -40,7 +40,7 @@ class ActualCommandScreen extends React.Component {
     return (
       <View style={styles.main_container}>
 
-        <HeaderInscription/>
+        <HeaderComponent/>
 
         <View style={styles.choice_tab}>
           <TouchableOpacity style={styles.button1}>

@@ -3,8 +3,8 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, ActivityIndicator } from 'react-native'
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
-import HeaderInscription from '../Components/HeaderInscription'
 import { connect } from 'react-redux'
+import HeaderComponent from '../Components/HeaderComponent'
 
 class DetailMyPropositionScreen extends React.Component {
   constructor(props) {
@@ -90,7 +90,7 @@ class DetailMyPropositionScreen extends React.Component {
   render() {
     return(
       <View style={styles.main_container}>
-        <HeaderInscription/>
+        <HeaderComponent/>
   
         <View style={styles.header}>
           <TouchableOpacity onPress={() => this.props.navigation.navigate("MyDish")}>
