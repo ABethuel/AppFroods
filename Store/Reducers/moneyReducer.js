@@ -5,12 +5,16 @@ const initialState = {coin: 60}
 function getMoney(state = initialState, action){
     let nextState
     switch (action.type) {
-        case 'GET_COIN':
+        case 'COIN_REMOVE':
             return {
                 ...state,
                 coin: state.coin - action.value 
             }
-            return nextState || state
+        case 'COIN_ADD': 
+            return {
+                ...state,
+                coin: state.coin + action.value
+            }
     default:
         return state;
     }

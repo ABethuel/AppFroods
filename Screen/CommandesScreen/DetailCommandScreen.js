@@ -52,10 +52,18 @@ class DetailCommandScreen extends React.Component {
   }
 
   _toggleCommand() {
-    const action = { type: 'TOGGLE_COMMAND', value: this.state.dish}
-    const action_money = { type: 'GET_COIN', value: 2}
-    this.props.dispatch(action)
-    this.props.dispatch(action_money)
+    const action_command = { type: 'TOGGLE_COMMAND', value: this.state.dish}
+    const action_money_remove = { type: 'COIN_REMOVE', value: parseInt(this.state.dish.price)}
+    const action_money_add = { type: 'COIN_ADD', value: parseInt(this.state.dish.price) }
+    this.props.dispatch(action_command)
+
+    if (this.props.commandMade.findIndex(item => item.id === this.state.dish.id) !== -1) {
+      this.props.dispatch(action_money_add)
+    }
+    else {
+      this.props.dispatch(action_money_remove)
+    }
+    console.log(this.props.coin)
   }
 
   _displayDetail() {

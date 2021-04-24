@@ -1,7 +1,7 @@
 // Components/Favorites.js
 
 import React from 'react'
-import { StyleSheet, Text, View, Image, ActivityIndicator } from 'react-native'
+import { StyleSheet, Text, View, Image, ActivityIndicator, VirtualizedList } from 'react-native'
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
 import HeaderInscription from '../../../Components/HeaderInscription'
 import { connect } from 'react-redux'
@@ -49,7 +49,7 @@ class DetailScreen extends React.Component {
 
   _displayShowCommand() {
     if (this.props.commandMade.findIndex(item => item.id === this.state.dish.id) !== -1){
-      return(
+      return( 
         <TouchableOpacity 
           style={styles.btn_show}
           onPress={() => this.props.navigation.navigate('Commandes')}>
@@ -61,9 +61,16 @@ class DetailScreen extends React.Component {
 
   _toggleCommand() {
     const action_command = { type: 'TOGGLE_COMMAND', value: this.state.dish}
-    const action_money = { type: 'GET_COIN', value: 2}
+    const action_money_remove = { type: 'COIN_REMOVE', value: parseInt(this.state.dish.price)}
+    const action_money_add = { type: 'COIN_ADD', value: parseInt(this.state.dish.price) }
     this.props.dispatch(action_command)
-    this.props.dispatch(action_money)
+
+    if (this.props.commandMade.findIndex(item => item.id === this.state.dish.id) !== -1) {
+      this.props.dispatch(action_money_add)
+    }
+    else {
+      this.props.dispatch(action_money_remove)
+    }
     console.log(this.props.coin)
   }
 
