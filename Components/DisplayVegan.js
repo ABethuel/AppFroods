@@ -30,7 +30,7 @@ class DisplayVegan extends React.Component {
                   </View>
                 </TouchableOpacity>
             )
-        }
+        }  
     }
     
     render() {

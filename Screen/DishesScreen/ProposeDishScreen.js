@@ -131,17 +131,31 @@ class ProposeDishScreen extends React.Component {
     }
     else {
         const action = { type: 'TOGGLE_PROPOSITION', value: plat}
-        this.props.dispatch(action)
+        this.props.dispatch(action) //On envoie la proposition dans la liste 
         console.log(this.props.propositionCommand)
         Alert.alert('Proposition envoyée')
 
       /*this.state.data.push(plat)
       console.log(this.state.data)*/
     }
-    
   }
 
-  render() {
+  _displayImageCamera() {
+    if (!this.state.imageCamera){
+      return(
+        <Image style={styles.add_image} source={require('../../images/add.png')}/>
+      )
+    }
+    else if (this.state.imageCamera) {
+      return(
+        <Image source={{ uri: this.state.imageCamera }}
+          style={{height: 200, 
+          borderRadius: 10,}}/>
+      )
+    }
+  }
+
+  render() { 
     return (
       <View style={styles.main_container}>
         <HeaderComponent/>
@@ -157,14 +171,7 @@ class ProposeDishScreen extends React.Component {
           <View style={styles.container}>
             <View style={styles.image_container}>
               <TouchableOpacity onPress={this.getImageFromCam}>
-                {!this.state.imageCamera && (
-                  <Image style={styles.add_image} source={require('../../images/add.png')}/>
-                )}
-                {this.state.imageCamera && (
-                  <Image source={{ uri: this.state.imageCamera }}
-                    style={{height: 200, 
-                            borderRadius: 10,}}/>
-                )}
+                {this._displayImageCamera()}
               </TouchableOpacity>
             </View>
 
