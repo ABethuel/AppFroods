@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, View, Text, Image } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import AnimationDish from '../Animations/AnimationDish'
 
 
 class DisplayOldPropositions extends React.Component {
@@ -8,26 +9,28 @@ class DisplayOldPropositions extends React.Component {
     const {id, name, date, from, price, description, image} = this.props.proposition
 
     return (
-      <View 
-        style={styles.main_container}
-       >
-        <Image
-            style={styles.images}
-            source={{uri: image}}
-        />
-        <View style={styles.container}>
-          <View style={styles.top_container}>
-            <Text style={styles.title_text} numberOfLines={1}>{name}</Text>
-            <Text style={styles.price_text}>{price}P</Text>
-          </View>
-          <View style={styles.description_container}>
-            <Text style={styles.description_text} numberOfLines={5}>{description}</Text>
-          </View>
-          <View>
-            <Text style={styles.date_text}>Le {date}</Text>
+      <AnimationDish>
+        <View 
+          style={styles.main_container}
+        >
+          <Image
+              style={styles.images}
+              source={{uri: image}}
+          />
+          <View style={styles.container}>
+            <View style={styles.top_container}>
+              <Text style={styles.title_text} numberOfLines={1}>{name}</Text>
+              <Text style={styles.price_text}>{price}P</Text>
+            </View>
+            <View style={styles.description_container}>
+              <Text style={styles.description_text} numberOfLines={5}>{description}</Text>
+            </View>
+            <View>
+              <Text style={styles.date_text}>Le {date}</Text>
+            </View>
           </View>
         </View>
-      </View>
+      </AnimationDish>
     )
   }
 }

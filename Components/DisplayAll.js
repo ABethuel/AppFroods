@@ -1,5 +1,6 @@
 import React from 'react'
 import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native'
+import AnimationDish from '../Animations/AnimationDish'
 
 
 class DisplayAllCommands extends React.Component {
@@ -7,27 +8,30 @@ class DisplayAllCommands extends React.Component {
     const {id, name, date, from, price, description, image, adress, category} = this.props.command
 
     return (
-      <TouchableOpacity 
-        style={styles.main_container}
-        onPress={() => this.props.displayDish(id, name, date, from, price, category, adress, description, image)}
-       >
-        <Image
-            style={styles.images}
-            source={{uri: image}}
-        />
-        <View style={styles.container}>
-          <View style={styles.top_container}>
-            <Text style={styles.title_text} numberOfLines={1}>{name}</Text>
-            <Text style={styles.price_text}>{price}P</Text>
+      <AnimationDish>
+        <TouchableOpacity 
+          style={styles.main_container}
+          onPress={() => this.props.displayDish(id, name, date, from, price, category, adress, description, image)}
+        >
+          <Image
+              style={styles.images}
+              source={{uri: image}}
+          />
+          <View style={styles.container}>
+            <View style={styles.top_container}>
+              <Text style={styles.title_text} numberOfLines={1}>{name}</Text>
+              <Text style={styles.price_text}>{price}P</Text>
+            </View>
+            <View style={styles.description_container}>
+              <Text style={styles.description_text} numberOfLines={5}>{description}</Text>
+            </View>
+            <View>
+              <Text style={styles.date_text}>{adress}</Text>
+            </View>
           </View>
-          <View style={styles.description_container}>
-            <Text style={styles.description_text} numberOfLines={5}>{description}</Text>
-          </View>
-          <View>
-            <Text style={styles.date_text}>{adress}</Text>
-          </View>
-        </View>
-      </TouchableOpacity>
+        </TouchableOpacity>
+      </AnimationDish>
+
     )
   }
 }

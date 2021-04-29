@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, View, Text, Image } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import AnimationDish from '../Animations/AnimationDish'
 
 
 class DisplayMyPropositions extends React.Component {
@@ -8,29 +9,30 @@ class DisplayMyPropositions extends React.Component {
     const {id, image, name, description, category, adress, price} = this.props.command
     console.log(this.props)
     return (
-    
-      <TouchableOpacity 
-        style={styles.main_container}
-        onPress={() => this.props.displayDetail(id, image, name, description, category, adress, price)}
-       >
-        <Image
-            style={styles.images}
-            source={{uri: image}}
-        />
-        <View style={styles.container}>
-          <View style={styles.top_container}>
-            <Text style={styles.title_text} numberOfLines={1}>{this.props.command.name}</Text>
-            <Text style={styles.price_text}>{price}P</Text>
+      <AnimationDish>
+        <TouchableOpacity 
+          style={styles.main_container}
+          onPress={() => this.props.displayDetail(id, image, name, description, category, adress, price)}
+        >
+          <Image
+              style={styles.images}
+              source={{uri: image}}
+          />
+          <View style={styles.container}>
+            <View style={styles.top_container}>
+              <Text style={styles.title_text} numberOfLines={1}>{this.props.command.name}</Text>
+              <Text style={styles.price_text}>{price}P</Text>
+            </View>
+            <View style={styles.description_container}>
+              <Text style={styles.description_text} numberOfLines={5}>{description}</Text>
+            </View>
+            <View>
+              <Text style={styles.category_text}>{category}</Text>
+            </View>
+            
           </View>
-          <View style={styles.description_container}>
-            <Text style={styles.description_text} numberOfLines={5}>{description}</Text>
-          </View>
-          <View>
-            <Text style={styles.category_text}>{category}</Text>
-          </View>
-          
-        </View>
-      </TouchableOpacity>
+        </TouchableOpacity>
+      </AnimationDish>
     )
   }
 }

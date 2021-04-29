@@ -1,34 +1,39 @@
 import React from 'react'
-import { StyleSheet, View, Text, Image } from 'react-native'
+import { StyleSheet, View, Text, Image, Dimensions, Animated } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import AnimationDish from '../Animations/AnimationDish'
 
 
 class DisplayAllCommands extends React.Component {
+
   render() {
     const {id, name, date, from, price, category, adress, description, image} = this.props.command
 
     return (
-      <TouchableOpacity 
-        style={styles.main_container}
-        onPress={() => this.props.displayDetail(id, name, date, from, price, category, adress, description, image)}
-       >
-        <Image
-            style={styles.images}
-            source={{uri: image}}
-        />
-        <View style={styles.container}>
-          <View style={styles.top_container}>
-            <Text style={styles.title_text} numberOfLines={1}>{name}</Text>
-            <Text style={styles.price_text}>{price}P</Text>
+      <AnimationDish>
+        <TouchableOpacity 
+          style={styles.main_container}
+          onPress={() => this.props.displayDetail(id, name, date, from, price, category, adress, description, image)}
+        >
+          <Image
+              style={styles.images}
+              source={{uri: image}}
+          />
+          <View style={styles.container}>
+            <View style={styles.top_container}>
+              <Text style={styles.title_text} numberOfLines={1}>{name}</Text>
+              <Text style={styles.price_text}>{price}P</Text>
+            </View>
+            <View style={styles.description_container}>
+              <Text style={styles.description_text} numberOfLines={5}>{description}</Text>
+            </View>
+            <View>
+              <Text style={styles.date_text}>Le {date}</Text>
+            </View>
           </View>
-          <View style={styles.description_container}>
-            <Text style={styles.description_text} numberOfLines={5}>{description}</Text>
-          </View>
-          <View>
-            <Text style={styles.date_text}>Le {date}</Text>
-          </View>
-        </View>
-      </TouchableOpacity>
+        </TouchableOpacity>
+      </AnimationDish>
+      
     )
   }
 }
