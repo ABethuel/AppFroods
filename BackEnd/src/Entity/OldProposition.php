@@ -42,6 +42,11 @@ class OldProposition
      */
     private $image;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $category;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -103,6 +108,18 @@ class OldProposition
     public function setImage(?string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getCategory(): ?string
+    {
+        return $this->category;
+    }
+
+    public function setCategory(string $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }
